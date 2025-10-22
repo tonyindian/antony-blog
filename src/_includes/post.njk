@@ -1,0 +1,59 @@
+---
+layout: base.njk
+---
+
+<article itemscope itemtype="https://schema.org/BlogPosting">
+  <header>
+    <h1 itemprop="headline">{{ title }}</h1>
+    
+    <div class="post-meta">
+      <time datetime="{{ date | dateIso }}" itemprop="datePublished">
+        {{ date | dateReadable }}
+      </time>
+      {% if updated %}
+      <time datetime="{{ updated | dateIso }}" itemprop="dateModified">
+        Aktualisiert: {{ updated | dateReadable }}
+      </time>
+      {% endif %}
+    </div>
+
+    {% if description %}
+    <p class="post-description" itemprop="description">{{ description }}</p>
+    {% endif %}
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    {{ content | safe }}
+  </div>
+
+  <footer class="post-footer">
+    <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+      <span itemprop="name">Antony</span>
+    </div>
+  </footer>
+</article>
+
+{# JSON-LD Structured Data für LLMs #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ title }}",
+  "description": "{{ description }}",
+  "datePublished": "{{ date | dateIso }}",
+  {% if updated %}"dateModified": "{{ updated | dateIso }}",{% endif %}
+  "author": {
+    "@type": "Person",
+    "name": "Antony",
+    "url": "https://antony.ch"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Antony"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ page.url | url | absoluteUrl(site.url) }}"
+  }
+}
+</script>
