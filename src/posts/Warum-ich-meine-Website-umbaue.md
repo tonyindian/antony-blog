@@ -18,7 +18,7 @@ Letzte Woche fragte mich jemand ob ich eine Seite relaunchen kann. Ich sagte ja 
 
 Gestern kam dann das Diplom. Via Email. Speech Academy, bestanden, professioneller Sprecher. Meine Familie war begeistert (ja ich lieb sie dafür) und ich freute mich, aber da war auch eine Unruhe. Als würde mein katholisch-indisches Torret einsetzen und mich ermahnen, ja nicht zu stolz zu sein. Das verflog schnell, aber während ich das Diplom in der Hand halte merke ich: Ich habe für beides keinen Ort. Weder mein LinkedIn noch meine Website haben einen Platz dafür. Schlimmer noch, beide Orte zeigen gar nicht was ich schon alles gemacht habe und sorgfältig verborgen habe damit es nicht auffällt. Was mich plötzlich ärgerte. Warum nicht?
 
-Das Leben und meine Gesundheit haben Prioritäten gesetzt die ich nicht aussuchen konnte. Vor drei Jahren bekam ich eine neue Leber. Strenger Energie-Haushalt wurde zur Realität. Schaffen war wichtiger als Zeigen, Machen wichtiger als Dokumentieren. Aber jetzt, mit dem Diplom in der Hand und meinem Namen unter einer Website merke ich: Es ist Zeit auch den Rest sichtbar zu machen. Nicht um anzugeben (obwohl, ein bisschen sollte okay sein), sondern um selbstbewusst zu zeigen was ich gemacht habe.
+Das Leben und meine Gesundheit haben Prioritäten gesetzt die ich nicht aussuchen konnte. Vor drei Jahren bekam ich eine neue Leber. Strenger Energie-Haushalt wurde zur Realität. Schaffen war früher wichtiger als Zeigen, Machen wichtiger als Dokumentieren. Aber jetzt, mit dem Diplom in der Hand und meinem Namen unter einer Website merke ich: Es ist Zeit auch den Rest sichtbar zu machen. Nicht um anzugeben, obwohl, ein bisschen sollte okay sein.
 
 **Was dieser Blog ist (und nicht ist)**
 
