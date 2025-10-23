@@ -16,9 +16,11 @@ Gestern kam dann das Diplom. Via Email. Speech Academy, bestanden, professionell
 
 Das Leben und meine Gesundheit haben Prioritäten gesetzt die ich nicht aussuchen konnte. Vor drei Jahren bekam ich eine neue Leber. Strenger Energie-Haushalt wurde zur Realität. Schaffen war wichtiger als Zeigen, Machen wichtiger als Dokumentieren. Aber jetzt, mit dem Diplom in der Hand und meinem Namen unter einer Website merke ich: Es ist Zeit auch den Rest sichtbar zu machen. Nicht um anzugeben (obwohl, ein bisschen sollte okay sein), sondern um selbstbewusst zu zeigen was ich gemacht habe. 
 
+
 **Was dieser Blog ist (und nicht ist)** 
 
 Das hier wird kein Portfolio. Kein "Schaut was ich kann", kein "Bucht meine Stimme", keine Service-Grids mit bunten Boxen. Das ist Dokumentation. Ich baue eine Website die ein Leben zeigt. Meins. Wie strukturiert man das? Wie nutzt man AI als Medium, nicht als Krücke? Wie macht man Sachen sichtbar ohne verkaufen zu müssen? Dieser Blog dokumentiert den Prozess. Transparent, Fehler inklusive, Learnings geteilt. Die Website wird zeigen wer ich bin. Der Blog zeigt wie sie entsteht. 
+
 
 **Was kommt** 
 
