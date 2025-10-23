@@ -4,8 +4,6 @@ title: Warum ich meine Website umbaue
 description: Oder was ein Speech-Academy Diplom auslösen kann
 date: 2025-10-23
 ---
----
----
 Gestern bekam ich mein Speech Academy Diplom. Vor ein paar Tagen schrieb ich "Design by Antony Alex" auf eine Website die ich gebaut hatte. Ich hatte nichts zum Verlinken.
 
 Hi, mein Name ist Antony Alex. Du bist auf dieser Seite gelandet aus mir noch unerfindlichen Gründen. Aber hey, du hast bis hierher gelesen, also erzähle ich dir kurz weshalb ich diesen Blog, diesen Relaunch meiner Seite in Angriff genommen habe.
