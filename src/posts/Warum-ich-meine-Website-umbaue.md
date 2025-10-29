@@ -1,4 +1,3 @@
-
 ---
 layout: post.njk
 title: Warum ich meine Website umbaue
@@ -34,6 +33,6 @@ Wie zeige ich Musik, Gastronomie, Sprache als Sprecher, Sprache in meinen Texten
 
 Ich will keinen Minimalismus, nicht die Angst vor Farben. Ich will grell, dezent, erschlagend und kuschlig, je nachdem wovon wir reden. Mithilfe meiner AI Praktikanten würde ich das hinkriegen. Aber die wichtigste Lektion die ich gelernt habe ist: Menschen wollen wissen wie etwas entsteht, was die Beweggründe sind. Das iterative Denken, das radikale und penible Dokumentieren, erlaubt mir und jedem der sich dafür interessiert einen direkten Einblick in diesen Prozess der Entstehung.
 
-Eine solche Reise ins Unbekannte ist immer mit der Gefahr des Versagens verbunden. 
+Eine solche Reise ins Unbekannte ist immer mit der Gefahr des Versagens verbunden.
 
 > Failure is always expected. But never accepted.
