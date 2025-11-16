@@ -10,12 +10,12 @@
 
 :root {
   /* Colors */
-  --carriage-wood: #C89A67;
-  --warm-brass: #C6A66C;
+  --carriage-wood: #866745;
+  --warm-brass: #7f6a45;
   --table-linen: #F4EFE6;
   --piano-black: #121212;
-  --warm-taupe: #B5A89A;
-  --terracotta: #D4745F;
+  --warm-taupe: #746c63;
+  --terracotta: #a15848;
   
   /* Semantic Colors */
   --bg-primary: var(--table-linen);
