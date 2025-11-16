@@ -1,15 +1,17 @@
 ---
 layout: base.njk
 title: "Blog"
+description: "Notizen über Sprache, Musik, AI und den Prozess dazwischen."
 ---
 
-# Entwicklungs-Dokumentation
+# Blog
 
-Dieser Blog dokumentiert den Rebuild von antony.ch – transparent, iterativ, ehrlich.
+Notizen über Sprache, Musik, AI und den Prozess dazwischen.
 
 ---
 
 {% for post in collections.posts %}
+{% if not post.data.draft %}
 <article class="post-preview">
   <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
   
@@ -21,4 +23,5 @@ Dieser Blog dokumentiert den Rebuild von antony.ch – transparent, iterativ, eh
   <p>{{ post.data.description }}</p>
   {% endif %}
 </article>
+{% endif %}
 {% endfor %}

@@ -3,22 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% if title %}{{ title }} – {% endif %}Antony</title>
+  <title>{% if title %}{{ title }}{% else %}antony alex – Professioneller Sprecher{% endif %}</title>
+  
+  {% if description %}
+  <meta name="description" content="{{ description }}">
+  {% else %}
+  <meta name="description" content="Professioneller Sprecher aus Zürich. 40 Jahre Klavier prägen Rhythmus und Dynamik. Speech Academy Diplom 2025.">
+  {% endif %}
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="{% if title %}{{ title }}{% else %}antony alex{% endif %}">
+  <meta property="og:description" content="{% if description %}{{ description }}{% else %}Professioneller Sprecher aus Zürich{% endif %}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://antony.ch{{ page.url }}">
+  
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
   <header>
-    <nav>
-      <a href="/">Antony</a>
-    </nav>
+    <div class="header-inner">
+      <a href="/" class="logo">antony alex</a>
+      <nav>
+        <a href="/#demos">demos</a>
+        <a href="/#about">über mich</a>
+        <a href="/#kontakt">kontakt</a>
+      </nav>
+    </div>
   </header>
   
-  <main>
+  {% if page.url == "/" %}
+    <!-- Homepage: No main wrapper -->
     {{ content | safe }}
-  </main>
+  {% else %}
+    <!-- Blog pages: With main wrapper -->
+    <main>
+      {{ content | safe }}
+    </main>
+  {% endif %}
   
   <footer>
-    <p>2025</p>
+    <p>© 2025 antony alex</p>
   </footer>
 </body>
 </html>

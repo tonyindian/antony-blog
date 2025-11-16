@@ -1,0 +1,208 @@
+{
+  "main": {
+    "id": "0bdc80393a3d4723",
+    "type": "split",
+    "children": [
+      {
+        "id": "86192db91453be3a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b85543cf95dc0aa3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Drafts/Warum-ich-meine-Website-umbaue.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Warum-ich-meine-Website-umbaue"
+            }
+          },
+          {
+            "id": "0580adac89cdc2bf",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Templates/Blog-Post.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Blog-Post"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "f3f73d47ef124dba",
+    "type": "split",
+    "children": [
+      {
+        "id": "2398269775ebf7ce",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c87d3fd72557602f",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "a78654b9b8f66e05",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "d89fcbe17319e9a8",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "a533f10eb840f9cf",
+    "type": "split",
+    "children": [
+      {
+        "id": "87d23d19c9bfca29",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "694cc6b1451d03df",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Blog-Posts/Warum-ich-meine-Website-umbaue.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Warum-ich-meine-Website-umbaue"
+            }
+          },
+          {
+            "id": "eb76024b3e132c5b",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Blog-Posts/Warum-ich-meine-Website-umbaue.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Warum-ich-meine-Website-umbaue"
+            }
+          },
+          {
+            "id": "d78e6b76cbf29931",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "30404cfa67961be1",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Blog-Posts/Warum-ich-meine-Website-umbaue.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Warum-ich-meine-Website-umbaue"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "c87d3fd72557602f",
+  "lastOpenFiles": [
+    "Drafts/zweiter post.md",
+    "Drafts/Warum-ich-meine-Website-umbaue.md",
+    "Blog-Posts/zweiter post.md",
+    "mängelliste.md",
+    "systemanweisungen.md",
+    "Drafts/test-post 1.md",
+    "Drafts",
+    "Blog-Posts/obsidian-workflow-test.md",
+    "Blog-Posts",
+    "Templates/Blog-Post.md",
+    "Untitled 1",
+    "Templates",
+    "Knowledge_Base/WEBDESIGN_KNOWLEDGE_BASE_V2.md",
+    "Project_Briefs/ANTONY-CH-PROJECT-BRIEF-2025-10-22.md",
+    "Project_Briefs/ANTONY-CH-PROJECT-BRIEF-2025-10-22-MORNING.md",
+    "Project_Briefs/ANTONY-CH-PROJECT-BRIEF-2025-10-21.md",
+    "Project_Briefs",
+    "Knowledge_Base"
+  ]
+}
