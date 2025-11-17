@@ -34,9 +34,21 @@
               "icon": "lucide-file",
               "title": "Blog-Post"
             }
+          },
+          {
+            "id": "500f440e2ebeb03a",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.10.3"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.10.3"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -184,7 +196,7 @@
       "bases:Create new base": false
     }
   },
-  "active": "c87d3fd72557602f",
+  "active": "500f440e2ebeb03a",
   "lastOpenFiles": [
     "Drafts/zweiter post.md",
     "Drafts/Warum-ich-meine-Website-umbaue.md",
