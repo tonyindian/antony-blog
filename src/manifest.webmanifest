@@ -1,0 +1,21 @@
+{
+  "name": "Antony Alex",
+  "short_name": "antony.ch",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#F4EFE6",
+  "theme_color": "#F4EFE6",
+  "lang": "de-CH",
+  "description": "Professioneller Sprecher aus Zürich.",
+  "icons": [
+    {
+      "src": "/assets/icons/aa-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
+

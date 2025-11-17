@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Antony Alex App Icon</title>
+  <desc id="desc">Beiges Quadrat mit den Buchstaben aa in dunkler Schrift.</desc>
+  <rect width="512" height="512" fill="#F4EFE6"/>
+  <text
+    x="50%"
+    y="50%"
+    text-anchor="middle"
+    dominant-baseline="central"
+    font-size="220"
+    font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Manrope', sans-serif"
+    fill="#121212"
+  >
+    aa
+  </text>
+</svg>
+

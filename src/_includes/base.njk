@@ -3,23 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% if title %}{{ title }}{% else %}antony alex – Professioneller Sprecher{% endif %}</title>
+  <title>{% if title %}{{ title }} | antony alex{% else %}antony alex | Musiker. Sprecher. Stimmgeber. Zürich{% endif %}</title>
   
   {% if description %}
   <meta name="description" content="{{ description }}">
   {% else %}
-  <meta name="description" content="Professioneller Sprecher aus Zürich. 40 Jahre Klavier prägen Rhythmus und Dynamik. Speech Academy Diplom 2025.">
+  <meta name="description" content="Sprecher mit 40 Jahren musikalischem Timing. Speech Academy Diplom, Deutsch/Englisch native. Zürich">
   {% endif %}
   
+  <!-- Canonical URL -->
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  
   <!-- Open Graph -->
-  <meta property="og:title" content="{% if title %}{{ title }}{% else %}antony alex{% endif %}">
-  <meta property="og:description" content="{% if description %}{{ description }}{% else %}Professioneller Sprecher aus Zürich{% endif %}">
+  <meta property="og:title" content="{% if title %}{{ title }}{% else %}antony alex | Musiker. Sprecher. Stimmgeber.{% endif %}">
+  <meta property="og:description" content="{% if description %}{{ description }}{% else %}Sprecher mit 40 Jahren musikalischem Timing. Speech Academy Diplom, Deutsch/Englisch native. Zürich{% endif %}">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://antony.ch{{ page.url }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:locale" content="de_CH">
+  
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{% if title %}{{ title }}{% else %}antony alex | Musiker. Sprecher. Stimmgeber.{% endif %}">
+  <meta name="twitter:description" content="{% if description %}{{ description }}{% else %}Sprecher mit 40 Jahren musikalischem Timing. Speech Academy Diplom, Deutsch/Englisch native. Zürich{% endif %}">
+  
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Antony Alex",
+    "jobTitle": "Sprecher",
+    "url": "{{ site.url }}",
+    "knowsLanguage": ["de", "en"],
+    "areaServed": [
+      {
+        "@type": "Country",
+        "name": "Switzerland"
+      },
+      {
+        "@type": "Place",
+        "name": "Remote/Worldwide"
+      }
+    ],
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "Speech Academy"
+    },
+    "knowsAbout": [
+      "Commercial Voice Over",
+      "Audiobook Narration",
+      "E-Learning",
+      "Documentary",
+      "IVR",
+      "Podcast",
+      "Explainer Videos",
+      "Dubbing",
+      "Animation",
+      "Video Games"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Zürich",
+      "addressCountry": "CH"
+    }
+  }
+  </script>
+
+  <meta name="theme-color" content="#F4EFE6">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/assets/icons/aa-icon.svg" type="image/svg+xml">
   
   <link rel="stylesheet" href="/css/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
   <header>
@@ -46,5 +103,15 @@
   <footer>
     <p>© 2025 antony alex</p>
   </footer>
+  
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", function () {
+        navigator.serviceWorker.register("/sw.js").catch(function (error) {
+          console.error("Service Worker registration failed:", error);
+        });
+      });
+    }
+  </script>
 </body>
 </html>
