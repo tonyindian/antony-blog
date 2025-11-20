@@ -293,11 +293,19 @@ section {
   gap: var(--space-md);
 }
 
+@media (min-width: 1024px) {
+  .demos-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
 .demo-card {
   background: rgba(255, 255, 255, 0.6);
   border: 1px solid rgba(200, 154, 103, 0.2);
   border-radius: 12px;
   padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
   transition: all 0.3s ease;
 }
 
@@ -351,6 +359,48 @@ section {
   font-size: 0.95rem;
   color: var(--text-secondary);
   margin: 0;
+}
+
+.demo-play-button {
+  margin-top: auto;
+  padding: 0.75rem 1.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: white;
+  background: var(--accent-primary);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.demo-play-button:hover:not(:disabled) {
+  background: var(--warm-brass);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(200, 154, 103, 0.3);
+}
+
+.demo-play-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.demo-play-button:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+.demo-play-button:disabled {
+  cursor: default;
+  opacity: 0.6;
+  background: rgba(200, 154, 103, 0.5);
+  box-shadow: none;
+}
+
+.demo-placeholder {
+  margin-top: auto;
 }
 
 /* Range Visualization via Border Colors */

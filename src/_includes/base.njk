@@ -83,9 +83,9 @@
     <div class="header-inner">
       <a href="/" class="logo">antony alex</a>
       <nav>
-        <a href="/#demos">demos</a>
-        <a href="/#about">über mich</a>
-        <a href="/#kontakt">kontakt</a>
+        <a href="/#hoerbeispiele">Hörbeispiele</a>
+        <a href="/#about">Die Stimme</a>
+        <a href="/#kontakt">Kontakt</a>
       </nav>
     </div>
   </header>
@@ -103,7 +103,7 @@
   <footer>
     <p>© 2025 antony alex</p>
   </footer>
-  
+
   <script>
     if ("serviceWorker" in navigator) {
       window.addEventListener("load", function () {
@@ -113,5 +113,8 @@
       });
     }
   </script>
+  {% if page.url == "/" %}
+  <script src="/assets/js/demos.js" defer></script>
+  {% endif %}
 </body>
 </html>
