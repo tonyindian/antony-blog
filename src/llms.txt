@@ -1,0 +1,5 @@
+{{site.url}}/
+{{site.url}}/blog/
+
+# No audio paths.
+# No /demos/ entries.

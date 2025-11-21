@@ -1,0 +1,35 @@
+<section class="faq">
+  {% if faq %}
+    <h2>FAQ</h2>
+    <ul>
+      {% for item in faq %}
+        <li>
+          <h3>{{ item.question }}</h3>
+          <p>{{ item.answer }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</section>
+
+{# JSON-LD FAQPage schema #}
+{% if faq %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for item in faq %}
+    {
+      "@type": "Question",
+      "name": "{{ item.question | escape }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ item.answer | escape }}"
+      }
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}

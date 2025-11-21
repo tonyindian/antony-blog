@@ -1,0 +1,11 @@
+User-agent: GPTBot
+Disallow: /demos/
+
+User-agent: OAI-SearchBot
+Disallow: /demos/
+
+User-agent: PerplexityBot
+Disallow: /demos/
+
+User-agent: *
+Disallow: /demos/

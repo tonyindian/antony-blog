@@ -191,7 +191,7 @@ header .header-inner {
 
 header .logo {
   font-family: var(--font-sans);
-  font-size: 1.25rem;
+  font-size: 1.05rem;
   font-weight: 600;
   letter-spacing: 0.05em;
   color: var(--text-primary);
@@ -692,25 +692,66 @@ button[type="submit"]:focus {
    ======================================== */
 
 main {
-  max-width: 720px;
+  max-width: 840px;
   margin: 0 auto;
-  padding: var(--space-xl) var(--container-padding);
+  padding: clamp(80px, 14vh, 140px) var(--container-padding);
 }
 
 article {
   margin-bottom: var(--space-xl);
 }
 
-article h1 + p {
-  font-size: 1.25rem;
-  color: var(--text-secondary);
+article header,
+.post-description {
+  position: static;
+  top: auto;
+}
+
+.article-meta {
+  font-size: 0.95rem;
+  opacity: 0.6;
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.article-title {
+  font-size: clamp(1.9rem, 3vw, 2.45rem);
+  font-weight: 600;
+  line-height: 1.22;
+  letter-spacing: -0.003em;
+  margin: 0 0 0.8rem 0;
+}
+
+.article-contributor {
+  font-size: 1rem;
+  opacity: 0.65;
+  margin-top: -0.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.post-lead {
+  font-size: 1.05rem;
+  line-height: 1.55;
+  opacity: 0.9;
+  margin-bottom: 2rem;
 }
 
 time {
-  display: block;
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  margin-bottom: var(--space-md);
+}
+
+.post-meta {
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.post-meta time {
+  opacity: 0.7;
+  margin-bottom: 0.35rem;
+}
+
+.post-meta time:last-of-type {
+  margin-bottom: 0;
 }
 
 .post-preview {
@@ -733,4 +774,264 @@ time {
 
 .post-preview h2 a:hover {
   color: var(--accent-primary);
+}
+
+.post-content p {
+  line-height: 1.8;
+  margin-bottom: 1.6rem;
+}
+
+.post-content ul,
+.post-content ol {
+  margin-top: 1.2rem;
+  margin-bottom: 1.8rem;
+  padding-left: 1.2rem;
+  line-height: 1.8;
+}
+
+.post-content h2 {
+  font-size: clamp(1.4rem, 2.2vw, 1.8rem);
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.post-content hr {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  margin: 3.5rem 0;
+}
+
+.post-content {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* FAQ spacing */
+.faq h2 {
+  margin-top: 4rem;
+}
+
+.faq li {
+  margin-bottom: 1.6rem;
+}
+
+.post-updated-small time {
+  display: inline;
+  margin-left: 0.25rem;
+}
+
+.post-updated-small {
+  font-size: 0.85rem;
+  opacity: 0.5;
+  margin-top: 0.75rem;
+  margin-bottom: 0;
+}
+
+@media (max-width: 640px) {
+
+  /* Header compact */
+  header.site-header {
+    padding: 0.8rem 1rem;
+  }
+
+  /* Main content narrower and more comfortable */
+  main {
+    padding: 110px 1.25rem 50px;
+  }
+
+  /* Blog index titles */
+  .blog-listing h1,
+  .blog-listing h2 {
+    font-size: clamp(1.4rem, 5vw, 1.8rem);
+    line-height: 1.25;
+    margin-bottom: 0.8rem;
+  }
+
+  .blog-listing time {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin-bottom: 0.8rem;
+  }
+
+  /* Article hero */
+  .article-meta {
+    font-size: 0.85rem;
+    white-space: normal;
+    margin-bottom: 0.4rem;
+    opacity: 0.6;
+  }
+
+  .article-title {
+    font-size: clamp(1.6rem, 6vw, 2.05rem);
+    line-height: 1.22;
+    margin-bottom: 0.6rem;
+    letter-spacing: -0.004em;
+  }
+
+  .article-contributor {
+    font-size: 0.95rem;
+    margin-top: -0.1rem;
+    margin-bottom: 0.8rem;
+    opacity: 0.65;
+  }
+
+  /* Lead paragraph */
+  .post-lead {
+    font-size: 1rem;
+    line-height: 1.55;
+    opacity: 0.85;
+    margin-bottom: 1.4rem;
+  }
+
+  /* Body text */
+  .post-content p {
+    font-size: 0.97rem;
+    line-height: 1.65;
+    margin-bottom: 1.2rem;
+  }
+
+  .post-content h2 {
+    font-size: clamp(1.25rem, 4.6vw, 1.55rem);
+    margin-top: 2rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+  }
+
+  .post-content hr {
+    margin: 2.8rem 0;
+  }
+
+  /* FAQ */
+  .faq h2 {
+    font-size: 1.1rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1.2rem;
+  }
+
+  /* Updated line */
+  .post-updated-small {
+    font-size: 0.8rem;
+    opacity: 0.45;
+    margin-top: 0.5rem;
+  }
+
+  .post-updated-small time {
+    display: inline;
+    margin-left: 0.25rem;
+  }
+
+  /* Footer */
+  footer {
+    padding: 2rem 1.25rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* ========================================
+   BLOG HERO & LISTING (Desktop/Default)
+   ======================================== */
+
+.blog-hero {
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 4rem var(--container-padding) 2.5rem;
+}
+
+.blog-hero h1 {
+  font-size: clamp(2.2rem, 3vw, 2.6rem);
+  margin-bottom: 0.5rem;
+}
+
+.blog-hero p {
+  max-width: 30rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+.blog-listing {
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 0 var(--container-padding) 4rem;
+}
+
+.blog-listing article {
+  padding: 2rem 0;
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+.blog-listing article:first-of-type {
+  border-top: none;
+}
+
+.blog-listing h2 {
+  font-size: clamp(1.6rem, 2.3vw, 2rem);
+  line-height: 1.25;
+  margin-bottom: 0.4rem;
+}
+
+.blog-teaser-meta {
+  font-size: 0.95rem;
+  opacity: 0.7;
+  margin-bottom: 0.4rem;
+}
+
+.blog-teaser-lead {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+/* ========================================
+   TABLET REFINEMENTS
+   ======================================== */
+
+@media (min-width: 720px) and (max-width: 1023px) {
+  header.site-header {
+    padding: 1.2rem 2.4rem;
+  }
+
+  .blog-hero {
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+  }
+
+  .blog-listing article {
+    padding: 1.6rem 0;
+  }
+}
+
+/* ========================================
+   DESKTOP HEADER REFINEMENTS
+   ======================================== */
+
+@media (min-width: 960px) {
+  header.site-header {
+    padding: 1.4rem 3rem;
+  }
+
+  .site-branding {
+    font-size: 1.4rem;
+    letter-spacing: 0.03em;
+  }
+
+  .site-nav {
+    gap: 1.8rem;
+  }
+
+  .site-nav a {
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+    text-transform: lowercase;
+    padding: 0.4rem 0;
+  }
+
+  .site-nav a:hover,
+  .site-nav a:focus-visible {
+    opacity: 0.8;
+    text-decoration: none;
+  }
 }

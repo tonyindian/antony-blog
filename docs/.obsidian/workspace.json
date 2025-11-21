@@ -22,33 +22,63 @@
             }
           },
           {
-            "id": "0580adac89cdc2bf",
+            "id": "a43817583e838481",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "Templates/Blog-Post.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
               "title": "Blog-Post"
             }
           },
           {
-            "id": "500f440e2ebeb03a",
+            "id": "44d7bfcca916b73d",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.10.3"
+                "file": "Templates/Blog-Post.md",
+                "mode": "source",
+                "source": true
               },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.10.3"
+              "icon": "lucide-file",
+              "title": "Blog-Post"
+            }
+          },
+          {
+            "id": "e2b2d21d44d7b505",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Drafts/Musikalität als Werkzeug für klare, ruhige Sprechertexte.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "Musikalität als Werkzeug für klare, ruhige Sprechertexte"
+            }
+          },
+          {
+            "id": "81592e96620cb5a8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Drafts/Musikalität als Werkzeug für klare, ruhige Sprechertexte 1.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "Musikalität als Werkzeug für klare, ruhige Sprechertexte 1"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -196,18 +226,21 @@
       "bases:Create new base": false
     }
   },
-  "active": "500f440e2ebeb03a",
+  "active": "c87d3fd72557602f",
   "lastOpenFiles": [
+    "Drafts/Musikalität als Werkzeug für klare, ruhige Sprechertexte.md",
+    "Drafts/Musikalität als Werkzeug für klare, ruhige Sprechertexte 1.md",
+    "Templates/Blog-Post.md",
+    "Untitled 1.md",
     "Drafts/zweiter post.md",
     "Drafts/Warum-ich-meine-Website-umbaue.md",
+    "Drafts/test-post 1.md",
     "Blog-Posts/zweiter post.md",
     "mängelliste.md",
     "systemanweisungen.md",
-    "Drafts/test-post 1.md",
     "Drafts",
     "Blog-Posts/obsidian-workflow-test.md",
     "Blog-Posts",
-    "Templates/Blog-Post.md",
     "Untitled 1",
     "Templates",
     "Knowledge_Base/WEBDESIGN_KNOWLEDGE_BASE_V2.md",

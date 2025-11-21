@@ -3,34 +3,41 @@ layout: base.njk
 ---
 
 <article itemscope itemtype="https://schema.org/BlogPosting">
-  <header>
-    <h1 itemprop="headline">{{ title }}</h1>
-    
-    <div class="post-meta">
-      <time datetime="{{ date | dateIso }}" itemprop="datePublished">
-        {{ date | dateReadable }}
-      </time>
-      {% if updated %}
-      <time datetime="{{ updated | dateIso }}" itemprop="dateModified">
-        Aktualisiert: {{ updated | dateReadable }}
-      </time>
-      {% endif %}
+  <header class="article-header">
+
+    <div class="article-meta">
+      {% if section %}{{ section }} · {% endif %}
+      {{ date | date("DD. MMMM YYYY") }} · ~6 Min
     </div>
 
-    {% if description %}
-    <p class="post-description" itemprop="description">{{ description }}</p>
+    <h1 class="article-title" itemprop="headline">{{ title }}</h1>
+
+    <div class="article-contributor">Text: Antony Alex</div>
+
+    {# Lead / Vorspann: zuerst answer, sonst description #}
+    {% if answer %}
+      <p class="post-lead" itemprop="description">{{ answer }}</p>
+    {% elseif description %}
+      <p class="post-lead" itemprop="description">{{ description }}</p>
     {% endif %}
+
+    {# Kleine, dezente Updated-Zeile unter dem Lead #}
+    {% if updated %}
+      <p class="post-updated-small">
+        Aktualisiert:
+        <time datetime="{{ updated | dateIso }}" itemprop="dateModified">
+          {{ updated | dateReadable }}
+        </time>
+      </p>
+    {% endif %}
+
   </header>
 
   <div class="post-content" itemprop="articleBody">
     {{ content | safe }}
   </div>
 
-  <footer class="post-footer">
-    <div itemprop="author" itemscope itemtype="https://schema.org/Person">
-      <span itemprop="name">antony.ch</span>
-    </div>
-  </footer>
+  {% include "faq.njk" %}
 </article>
 
 {# JSON-LD Structured Data für LLMs #}
@@ -39,7 +46,7 @@ layout: base.njk
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "{{ title }}",
-  "description": "{{ description }}",
+  "description": "{{ answer or description }}",
   "datePublished": "{{ date | dateIso }}",
   {% if updated %}"dateModified": "{{ updated | dateIso }}",{% endif %}
   "author": {
