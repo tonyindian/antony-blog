@@ -80,7 +80,18 @@
   
   <link rel="stylesheet" href="/css/style.css">
 </head>
-<body>
+{% set bodyClass %}
+  {% if page.url == "/" %}
+    home
+  {% elseif page.url.indexOf("/blog") == 0 %}
+    blog-page
+  {% elseif page.url.indexOf("/posts/") == 0 %}
+    post-page
+  {% else %}
+    default-page
+  {% endif %}
+{% endset %}
+<body class="{{ bodyClass | trim }}">
   <header>
     <div class="header-inner">
       <a href="/" class="logo">antony alex</a>

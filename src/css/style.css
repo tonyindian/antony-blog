@@ -628,6 +628,20 @@ button[type="submit"]:focus {
 }
 
 /* ========================================
+   FOOTER (Global)
+   ======================================== */
+
+footer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-lg) var(--container-padding);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  text-align: right;
+}
+
+/* ========================================
    RESPONSIVE
    ======================================== */
 
@@ -691,10 +705,17 @@ button[type="submit"]:focus {
    BLOG PAGES (Existing Styles)
    ======================================== */
 
-main {
+body.blog-page main,
+body.post-page main {
   max-width: 840px;
   margin: 0 auto;
   padding: clamp(80px, 14vh, 140px) var(--container-padding);
+}
+
+body.home main {
+  max-width: none;
+  margin: 0;
+  padding: 0;
 }
 
 article {
@@ -838,7 +859,8 @@ time {
   }
 
   /* Main content narrower and more comfortable */
-  main {
+  body.blog-page main,
+  body.post-page main {
     padding: 110px 1.25rem 50px;
   }
 
