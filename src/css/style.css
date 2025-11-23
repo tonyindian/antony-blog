@@ -88,10 +88,15 @@
   --space-md: 2rem;
   --space-lg: 4rem;
   --space-xl: 6rem;
-  
+
   /* Layout */
   --max-width: 1200px;
   --container-padding: clamp(20px, 5vw, 80px);
+
+  /* Header */
+  --header-height: 60px;
+  --header-offset: clamp(100px, 14vh, 140px);
+  --header-offset-mobile: 110px;
 }
 
 /* ========================================
@@ -244,7 +249,7 @@ section {
   min-height: 85vh;
   display: flex;
   align-items: center;
-  padding-top: calc(60px + var(--space-lg));
+  padding-top: calc(var(--header-height) + var(--space-lg));
 }
 
 .hero-grid {
@@ -753,7 +758,7 @@ body.post-page main,
 body.default-page main {
   max-width: 840px;
   margin: 0 auto;
-  padding: clamp(100px, 14vh, 140px) var(--container-padding) clamp(60px, 10vh, 100px);
+  padding: var(--header-offset) var(--container-padding) clamp(60px, 10vh, 100px);
 }
 
 body.home main {
@@ -906,7 +911,7 @@ time {
   body.blog-page main,
   body.post-page main,
   body.default-page main {
-    padding: 110px 1.25rem 50px;
+    padding: var(--header-offset-mobile) 1.25rem 50px;
   }
 
   /* Blog index titles */
