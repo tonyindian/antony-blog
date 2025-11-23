@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "eleventy --serve",
-    "build": "eleventy"
+    "build": "npm run build:ts && eleventy",
+    "build:ts": "tsc",
+    "dev": "npm run build:ts -- --watch",
+    "lint:colors": "node scripts/check-colors.js"
   },
   "keywords": [],
   "author": "",

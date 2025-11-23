@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% if title %}{{ title }} | antony alex{% else %}antony alex | Musiker. Sprecher. Stimmgeber. Zürich{% endif %}</title>
+  <title>{% if title %}{{ title }} | antony alex{% else %}antony alex | Sprecher · Warmer Bariton. Deutsch &amp; Englisch. Zürich{% endif %}</title>
   
   {% if description %}
   <meta name="description" content="{{ description }}">
   {% else %}
-  <meta name="description" content="Sprecher mit 40 Jahren musikalischem Timing. Speech Academy Diplom, Deutsch/Englisch native. Zürich">
+  <meta name="description" content="Sprecher · Warmer Bariton. Brand-Stories, Dokumentationen, hochwertige Werbung. Sprachen: Deutsch, CH-Deutsch (Zürich), Englisch (leicht deutscher Akzent). Speech Academy Zürich, Diplom 2025.">
   {% endif %}
   
   <!-- Canonical URL -->
   <link rel="canonical" href="{{ site.url }}{{ page.url }}">
   
   <!-- Open Graph -->
-  <meta property="og:title" content="{% if title %}{{ title }}{% else %}antony alex | Musiker. Sprecher. Stimmgeber.{% endif %}">
-  <meta property="og:description" content="{% if description %}{{ description }}{% else %}Sprecher mit 40 Jahren musikalischem Timing. Speech Academy Diplom, Deutsch/Englisch native. Zürich{% endif %}">
+  <meta property="og:title" content="{% if title %}{{ title }}{% else %}antony alex | Sprecher · Warmer Bariton. Deutsch &amp; Englisch.{% endif %}">
+  <meta property="og:description" content="{% if description %}{{ description }}{% else %}Sprecher · Warmer Bariton. Brand-Stories, Dokumentationen, hochwertige Werbung. Sprachen: Deutsch, CH-Deutsch (Zürich), Englisch (leicht deutscher Akzent). Speech Academy Zürich, Diplom 2025.{% endif %}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ site.url }}{{ page.url }}">
   <meta property="og:locale" content="de_CH">
@@ -24,8 +24,8 @@
   
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{% if title %}{{ title }}{% else %}antony alex | Musiker. Sprecher. Stimmgeber.{% endif %}">
-  <meta name="twitter:description" content="{% if description %}{{ description }}{% else %}Sprecher mit 40 Jahren musikalischem Timing. Speech Academy Diplom, Deutsch/Englisch native. Zürich{% endif %}">
+  <meta name="twitter:title" content="{% if title %}{{ title }}{% else %}antony alex | Sprecher · Warmer Bariton. Deutsch &amp; Englisch.{% endif %}">
+  <meta name="twitter:description" content="{% if description %}{{ description }}{% else %}Sprecher · Warmer Bariton. Brand-Stories, Dokumentationen, hochwertige Werbung. Sprachen: Deutsch, CH-Deutsch (Zürich), Englisch (leicht deutscher Akzent). Speech Academy Zürich, Diplom 2025.{% endif %}">
   <meta name="twitter:image" content="{{ site.url }}/assets/og-default.jpg">
   
   <!-- JSON-LD Structured Data -->
@@ -77,6 +77,8 @@
 
   <link rel="manifest" href="/manifest.webmanifest">
   <link rel="icon" href="/assets/icons/aa-icon.svg" type="image/svg+xml">
+  <link rel="preload" href="/fonts/literata-v40-latin/literata-v40-latin-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/fonts/manrope-v20-latin/manrope-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   
   <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -92,13 +94,15 @@
   {% endif %}
 {% endset %}
 <body class="{{ bodyClass | trim }}">
-  <header>
+  <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
+  <header role="banner">
     <div class="header-inner">
-      <a href="/" class="logo">antony alex</a>
-      <nav>
-        <a href="/#hoerbeispiele">Hörbeispiele</a>
-        <a href="/#about">Stimme</a>
-        <a href="/#kontakt">Kontakt</a>
+      <a href="/" class="logo" aria-current="{{ page.url == '/' ? 'page' : undefined }}">antony alex</a>
+      <nav aria-label="Hauptnavigation">
+        <a href="/#hoerbeispiele" aria-current="{{ page.url == '/' ? 'true' : undefined }}">Hörbeispiele</a>
+        <a href="/#about" aria-current="{{ page.url == '/' ? 'true' : undefined }}">Stimme</a>
+        <a href="/about/" aria-current="{{ page.url startsWith '/about' ? 'page' : undefined }}">Über mich</a>
+        <a href="/#kontakt" aria-current="{{ page.url == '/' ? 'true' : undefined }}">Kontakt</a>
       </nav>
     </div>
   </header>
