@@ -13,9 +13,9 @@
     "resolveJsonModule": true,
     "allowJs": false,
     "sourceMap": true,
-    "outDir": "dist",
-    "rootDir": "src"
+    "outDir": "src/assets/js",
+    "rootDir": "src/assets/js"
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/assets/js/**/*.ts"],
   "exclude": ["node_modules"]
 }

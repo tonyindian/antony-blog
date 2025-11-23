@@ -7,7 +7,7 @@ layout: base.njk
 
     <div class="article-meta">
       {% if section %}{{ section }} · {% endif %}
-      {{ date | date("DD. MMMM YYYY") }} · ~6 Min
+      {{ page.date | dateReadable }} · ~6 Min
     </div>
 
     <h1 class="article-title" itemprop="headline">{{ title }}</h1>

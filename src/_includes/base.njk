@@ -20,13 +20,15 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ site.url }}{{ page.url }}">
   <meta property="og:locale" content="de_CH">
-  <meta property="og:image" content="{{ site.url }}/assets/og-default.jpg">
-  
+  <meta property="og:image" content="{{ site.url }}{{ ogImage }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{% if title %}{{ title }}{% else %}antony alex | Sprecher · Warmer Bariton. Deutsch &amp; Englisch.{% endif %}">
   <meta name="twitter:description" content="{% if description %}{{ description }}{% else %}Sprecher · Warmer Bariton. Brand-Stories, Dokumentationen, hochwertige Werbung. Sprachen: Deutsch, CH-Deutsch (Zürich), Englisch (leicht deutscher Akzent). Speech Academy Zürich, Diplom 2025.{% endif %}">
-  <meta name="twitter:image" content="{{ site.url }}/assets/og-default.jpg">
+  <meta name="twitter:image" content="{{ site.url }}{{ ogImage }}">
   
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -118,18 +120,14 @@
   {% endif %}
   
   <footer>
-    <p>© 2025 antony alex</p>
+    <p>
+      © 2025 antony alex ·
+      <a href="/impressum/">Impressum</a> ·
+      <a href="/datenschutz/">Datenschutz</a>
+    </p>
   </footer>
 
-  <script>
-    if ("serviceWorker" in navigator) {
-      window.addEventListener("load", function () {
-        navigator.serviceWorker.register("/sw.js").catch(function (error) {
-          console.error("Service Worker registration failed:", error);
-        });
-      });
-    }
-  </script>
+  <script src="/assets/js/sw-register.js" defer></script>
   {% if page.url == "/" %}
   <script src="/assets/js/demos.js" defer></script>
   {% endif %}
