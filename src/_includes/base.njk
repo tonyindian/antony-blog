@@ -100,7 +100,21 @@
   <header class="site-header" role="banner">
     <div class="header-inner">
       <a href="/" class="logo"{% if page.url == "/" %} aria-current="page"{% endif %}>antony alex</a>
-      <nav aria-label="Hauptnavigation">
+
+      <!-- Hamburger Menu Button (Mobile Only) -->
+      <button class="mobile-menu-toggle"
+              type="button"
+              aria-label="Menü öffnen"
+              aria-expanded="false"
+              aria-controls="mobile-nav">
+        <span class="hamburger-icon" aria-hidden="true">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </span>
+      </button>
+
+      <nav id="mobile-nav" aria-label="Hauptnavigation">
         <a href="/#hoerbeispiele"{% if page.url == "/" %} aria-current="true"{% endif %}>Hörbeispiele</a>
         <a href="/#about"{% if page.url == "/" %} aria-current="true"{% endif %}>Stimme</a>
         <a href="/about/"{% if page.url.indexOf('/about') == 0 %} aria-current="page"{% endif %}>Über mich</a>
@@ -128,6 +142,7 @@
   </footer>
 
   <script src="/assets/js/sw-register.js" defer></script>
+  <script src="/assets/js/mobile-menu.js" defer></script>
   {% if page.url == "/" %}
   <script src="/assets/js/demos.js" defer></script>
   {% endif %}
