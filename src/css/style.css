@@ -301,6 +301,14 @@ section {
   color: var(--color-accent);
 }
 
+.demos-intro {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-top: var(--space-sm);
+  margin-bottom: 0;
+}
+
 .demos-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -334,7 +342,27 @@ section {
   justify-content: space-between;
   align-items: baseline;
   margin-bottom: var(--space-sm);
+  gap: var(--space-sm);
+}
+
+.demo-type {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  line-height: 1.3;
+}
+
+.demo-duration {
+  font-family: var(--font-sans);
   font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .demo-genre {
