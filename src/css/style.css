@@ -88,10 +88,15 @@
   --space-md: 2rem;
   --space-lg: 4rem;
   --space-xl: 6rem;
-  
+
   /* Layout */
   --max-width: 1200px;
   --container-padding: clamp(20px, 5vw, 80px);
+
+  /* Header */
+  --header-height: 60px;
+  --header-offset: clamp(100px, 14vh, 140px);
+  --header-offset-mobile: 110px;
 }
 
 /* ========================================
@@ -169,7 +174,7 @@ a:focus {
    HEADER
    ======================================== */
 
-header {
+.site-header {
   position: fixed;
   top: 0;
   left: 0;
@@ -181,7 +186,7 @@ header {
   padding: var(--space-sm) var(--container-padding);
 }
 
-header .header-inner {
+.site-header .header-inner {
   max-width: var(--max-width);
   margin: 0 auto;
   display: flex;
@@ -189,7 +194,7 @@ header .header-inner {
   align-items: center;
 }
 
-header .logo {
+.site-header .logo {
   font-family: var(--font-sans);
   font-size: 1.05rem;
   font-weight: 600;
@@ -198,12 +203,12 @@ header .logo {
   text-decoration: none;
 }
 
-header nav {
+.site-header nav {
   display: flex;
   gap: var(--space-md);
 }
 
-header nav a {
+.site-header nav a {
   font-size: 1rem;
   font-weight: 500;
   color: var(--text-secondary);
@@ -211,7 +216,7 @@ header nav a {
   letter-spacing: 0.02em;
 }
 
-header nav a:hover {
+.site-header nav a:hover {
   color: var(--accent-primary);
 }
 
@@ -244,7 +249,7 @@ section {
   min-height: 85vh;
   display: flex;
   align-items: center;
-  padding-top: calc(60px + var(--space-lg));
+  padding-top: calc(var(--header-height) + var(--space-lg));
 }
 
 .hero-grid {
@@ -504,7 +509,7 @@ section {
 
 /* About page (article-style layout) */
 .about-page {
-  padding: clamp(100px, 14vh, 140px) var(--container-padding) clamp(60px, 10vh, 100px);
+  padding: 0;
   background: var(--bg-primary);
 }
 
@@ -692,12 +697,12 @@ footer {
   body {
     font-size: 17px;
   }
-  
-  header nav {
+
+  .site-header nav {
     gap: var(--space-sm);
   }
-  
-  header nav a {
+
+  .site-header nav a {
     font-size: 0.9rem;
   }
   
@@ -749,10 +754,11 @@ footer {
    ======================================== */
 
 body.blog-page main,
-body.post-page main {
+body.post-page main,
+body.default-page main {
   max-width: 840px;
   margin: 0 auto;
-  padding: clamp(80px, 14vh, 140px) var(--container-padding);
+  padding: var(--header-offset) var(--container-padding) clamp(60px, 10vh, 100px);
 }
 
 body.home main {
@@ -897,14 +903,15 @@ time {
 @media (max-width: 640px) {
 
   /* Header compact */
-  header.site-header {
+  .site-header {
     padding: 0.8rem 1rem;
   }
 
   /* Main content narrower and more comfortable */
   body.blog-page main,
-  body.post-page main {
-    padding: 110px 1.25rem 50px;
+  body.post-page main,
+  body.default-page main {
+    padding: var(--header-offset-mobile) 1.25rem 50px;
   }
 
   /* Blog index titles */
@@ -1055,7 +1062,7 @@ time {
    ======================================== */
 
 @media (min-width: 720px) and (max-width: 1023px) {
-  header.site-header {
+  .site-header {
     padding: 1.2rem 2.4rem;
   }
 
@@ -1074,7 +1081,7 @@ time {
    ======================================== */
 
 @media (min-width: 960px) {
-  header.site-header {
+  .site-header {
     padding: 1.4rem 3rem;
   }
 
