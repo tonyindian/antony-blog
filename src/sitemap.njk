@@ -1,0 +1,31 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {%- for page in collections.all %}
+  {%- if not page.data.sitemap or page.data.sitemap.ignore != true %}
+  <url>
+    <loc>{{ site.url }}{{ page.url | url }}</loc>
+    <lastmod>{{ page.date | dateIso }}</lastmod>
+    {%- if page.data.sitemap and page.data.sitemap.changefreq %}
+    <changefreq>{{ page.data.sitemap.changefreq }}</changefreq>
+    {%- else %}
+    <changefreq>monthly</changefreq>
+    {%- endif %}
+    {%- if page.data.sitemap and page.data.sitemap.priority %}
+    <priority>{{ page.data.sitemap.priority }}</priority>
+    {%- elif page.url == "/" %}
+    <priority>1.0</priority>
+    {%- elif page.url.indexOf("/blog") == 0 %}
+    <priority>0.8</priority>
+    {%- elif page.url.indexOf("/posts/") == 0 %}
+    <priority>0.7</priority>
+    {%- else %}
+    <priority>0.5</priority>
+    {%- endif %}
+  </url>
+  {%- endif %}
+  {%- endfor %}
+</urlset>

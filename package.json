@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run build:ts && npx @11ty/eleventy --serve",
-    "build": "npm run build:ts && npm run build:11ty",
+    "build": "npm run build:ts && npm run build:11ty && npm run build:minify",
     "build:ts": "tsc",
     "build:11ty": "npx @11ty/eleventy",
+    "build:minify": "node scripts/minify-css.js",
+    "build:prod": "ELEVENTY_ENV=production npm run build",
     "dev": "tsc --watch & npx @11ty/eleventy --serve",
     "lint:colors": "node scripts/check-colors.js",
     "clean": "rm -rf _site dist src/assets/js/*.js src/assets/js/*.js.map"
@@ -24,6 +26,9 @@
     "@11ty/eleventy": "^3.1.2",
     "@11ty/eleventy-img": "^6.0.4",
     "@11ty/eleventy-plugin-rss": "^2.0.4",
+    "clean-css": "^5.3.3",
+    "clean-css-cli": "^5.6.3",
+    "html-minifier-terser": "^7.2.0",
     "typescript": "^5.9.3"
   }
 }

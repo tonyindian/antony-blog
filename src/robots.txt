@@ -1,11 +1,24 @@
-User-agent: GPTBot
+User-agent: *
+Allow: /
 Disallow: /demos/
+
+User-agent: GPTBot
+Disallow: /
 
 User-agent: OAI-SearchBot
-Disallow: /demos/
+Disallow: /
 
 User-agent: PerplexityBot
-Disallow: /demos/
+Disallow: /
 
-User-agent: *
-Disallow: /demos/
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+# Sitemap
+Sitemap: https://www.antony.ch/sitemap.xml

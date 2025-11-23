@@ -1,5 +1,8 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const Image = require("@11ty/eleventy-img");
+const htmlmin = require("html-minifier-terser");
+
+const isProduction = process.env.ELEVENTY_ENV === "production";
 
 /**
  * Image optimization shortcode
@@ -105,7 +108,29 @@ module.exports = function(eleventyConfig) {
     return collectionApi.getFilteredByGlob("src/posts/*.md")
       .sort((a, b) => b.date - a.date);
   });
-  
+
+  // HTML Minification (production only)
+  if (isProduction) {
+    eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
+      if (outputPath && outputPath.endsWith(".html")) {
+        return htmlmin.minify(content, {
+          useShortDoctype: true,
+          removeComments: true,
+          collapseWhitespace: true,
+          minifyCSS: true,
+          minifyJS: true,
+          removeAttributeQuotes: false,
+          collapseBooleanAttributes: true,
+          removeEmptyAttributes: true,
+          decodeEntities: true,
+          sortAttributes: true,
+          sortClassName: true
+        });
+      }
+      return content;
+    });
+  }
+
   return {
     dir: {
       input: "src",
