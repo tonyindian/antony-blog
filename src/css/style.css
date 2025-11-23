@@ -736,14 +736,48 @@ footer {
     font-size: 17px;
   }
 
+  html {
+    scroll-padding-top: 4rem;
+  }
+
   .site-header nav {
     gap: var(--space-sm);
   }
 
   .site-header nav a {
     font-size: 0.9rem;
+    padding: 0.625rem 0.5rem;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
   }
-  
+
+  .demo-play-button {
+    padding: 0.875rem 1.75rem;
+    min-height: 44px;
+  }
+
+  .demo-video-close {
+    padding: 0.625rem 1.75rem;
+    min-height: 44px;
+  }
+
+  button[type="submit"] {
+    padding: 0.875rem 2.5rem;
+    min-height: 44px;
+  }
+
+  input,
+  textarea {
+    padding: 0.75rem 1rem;
+    font-size: 16px;
+    min-height: 44px;
+  }
+
+  textarea {
+    min-height: 120px;
+  }
+
   .hero {
     min-height: 70vh;
   }
@@ -1037,6 +1071,41 @@ time {
   footer {
     padding: 2rem 1.25rem;
     font-size: 0.85rem;
+  }
+}
+
+/* ========================================
+   VERY SMALL SCREENS (iPhone SE, 13 mini, Samsung S24)
+   ======================================== */
+
+@media (max-width: 390px) {
+  .site-header {
+    padding: 0.75rem 0.875rem;
+  }
+
+  .site-header .logo {
+    font-size: 0.95rem;
+  }
+
+  .site-header nav {
+    gap: 0.5rem;
+  }
+
+  .site-header nav a {
+    font-size: 0.8125rem;
+    padding: 0.625rem 0.375rem;
+  }
+
+  html {
+    scroll-padding-top: 3.5rem;
+  }
+
+  .demo-video-overlay {
+    padding: 1rem;
+  }
+
+  .demo-video-inner {
+    padding: 1rem;
   }
 }
 
