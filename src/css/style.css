@@ -502,6 +502,49 @@ section {
   line-height: 1.7;
 }
 
+/* About page (article-style layout) */
+.about-page {
+  padding: clamp(100px, 14vh, 140px) var(--container-padding) clamp(60px, 10vh, 100px);
+  background: var(--bg-primary);
+}
+
+.about-page .about-content {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.about-grid {
+  display: block;
+}
+
+.about-heading {
+  margin-bottom: var(--space-md);
+}
+
+.about-page .about-kicker {
+  font-size: 0.875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-xs);
+}
+
+.about-page h1 {
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  line-height: 1.15;
+  margin-bottom: var(--space-sm);
+}
+
+.about-body p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: var(--space-sm);
+}
+
+.about-body p:last-child {
+  margin-bottom: 0;
+}
+
 /* ========================================
    CONTACT SECTION
    ======================================== */
