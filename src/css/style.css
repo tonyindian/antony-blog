@@ -64,19 +64,18 @@
 
 :root {
   /* Colors */
-  --carriage-wood: #C89A67;
-  --warm-brass: #C6A66C;
-  --table-linen: #F4EFE6;
-  --piano-black: #121212;
-  --warm-taupe: #B5A89A;
-  --terracotta: #D4745F;
-  
+  --sage-green: rgb(44, 68, 53);
+  --soft-terracotta: rgb(195, 115, 95);
+  --light-sage: rgb(80, 115, 90);
+  --warm-gray: rgb(140, 130, 120);
+  --off-white: rgb(243, 242, 238);
+
   /* Semantic Colors */
-  --bg-primary: var(--table-linen);
-  --text-primary: var(--piano-black);
-  --text-secondary: var(--warm-taupe);
-  --accent-primary: var(--carriage-wood);
-  --accent-secondary: var(--terracotta);
+  --bg-primary: var(--off-white);
+  --text-primary: var(--sage-green);
+  --text-secondary: var(--warm-gray);
+  --accent-primary: var(--soft-terracotta);
+  --accent-secondary: var(--light-sage);
   
   /* Typography */
   --font-serif: 'Literata', Charter, Georgia, serif;
@@ -114,7 +113,7 @@ html {
 }
 
 body {
-  font-family: var(--font-sans);
+  font-family: Georgia, Charter, serif;
   font-size: 18px;
   line-height: 1.7;
   color: var(--text-primary);
@@ -180,9 +179,9 @@ a:focus {
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(244, 239, 230, 0.95);
+  background: rgba(243, 242, 238, 0.95);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(18, 18, 18, 0.08);
+  border-bottom: 1px solid rgba(44, 68, 53, 0.08);
   padding: var(--space-sm) var(--container-padding);
 }
 
@@ -283,9 +282,9 @@ section {
    ======================================== */
 
 .demos {
-  background: linear-gradient(180deg, 
-    var(--bg-primary) 0%, 
-    rgba(200, 154, 103, 0.03) 100%);
+  background: linear-gradient(180deg,
+    var(--bg-primary) 0%,
+    rgba(195, 115, 95, 0.03) 100%);
 }
 
 .demos h2 {
@@ -306,7 +305,7 @@ section {
 
 .demo-card {
   background: rgba(255, 255, 255, 0.6);
-  border: 1px solid rgba(200, 154, 103, 0.2);
+  border: 1px solid rgba(195, 115, 95, 0.2);
   border-radius: 12px;
   padding: var(--space-md);
   display: flex;
@@ -316,7 +315,7 @@ section {
 
 .demo-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(18, 18, 18, 0.08);
+  box-shadow: 0 12px 24px rgba(44, 68, 53, 0.08);
   border-color: var(--accent-primary);
 }
 
@@ -353,8 +352,8 @@ section {
 }
 
 .demo-placeholder {
-  background: rgba(200, 154, 103, 0.08);
-  border: 2px dashed rgba(200, 154, 103, 0.3);
+  background: rgba(195, 115, 95, 0.08);
+  border: 2px dashed rgba(195, 115, 95, 0.3);
   border-radius: 8px;
   padding: var(--space-md);
   text-align: center;
@@ -383,9 +382,9 @@ section {
 }
 
 .demo-play-button:hover:not(:disabled) {
-  background: var(--warm-brass);
+  background: var(--accent-secondary);
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(200, 154, 103, 0.3);
+  box-shadow: 0 6px 16px rgba(195, 115, 95, 0.3);
 }
 
 .demo-play-button:active:not(:disabled) {
@@ -400,7 +399,7 @@ section {
 .demo-play-button:disabled {
   cursor: default;
   opacity: 0.6;
-  background: rgba(200, 154, 103, 0.5);
+  background: rgba(195, 115, 95, 0.5);
   box-shadow: none;
 }
 
@@ -410,29 +409,29 @@ section {
 
 /* Range Visualization via Border Colors */
 .demo-hardselling {
-  border-left: 4px solid var(--terracotta);
+  border-left: 4px solid var(--accent-primary);
 }
 
 .demo-premium {
-  border-left: 4px solid var(--carriage-wood);
+  border-left: 4px solid var(--accent-secondary);
 }
 
 .demo-doku {
-  border-left: 4px solid var(--warm-taupe);
+  border-left: 4px solid var(--text-secondary);
 }
 
 .demo-hoerbuch {
-  border-left: 4px solid var(--piano-black);
+  border-left: 4px solid var(--text-primary);
 }
 
 .demo-video {
-  border-left: 4px solid var(--warm-brass);
+  border-left: 4px solid var(--accent-primary);
 }
 
 .demo-video-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(18, 18, 18, 0.6);
+  background: rgba(44, 68, 53, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -441,12 +440,12 @@ section {
 }
 
 .demo-video-inner {
-  background: rgba(244, 239, 230, 0.98);
+  background: rgba(243, 242, 238, 0.98);
   border-radius: 12px;
   padding: var(--space-md);
   max-width: 960px;
   width: 100%;
-  box-shadow: 0 18px 40px rgba(18, 18, 18, 0.35);
+  box-shadow: 0 18px 40px rgba(44, 68, 53, 0.35);
 }
 
 .demo-video-player {
@@ -480,9 +479,9 @@ section {
 }
 
 .demo-video-close:hover {
-  background: var(--warm-brass);
+  background: var(--accent-secondary);
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(200, 154, 103, 0.35);
+  box-shadow: 0 4px 14px rgba(195, 115, 95, 0.35);
 }
 
 .demo-video-close:focus-visible {
@@ -607,7 +606,7 @@ textarea {
   font-size: 1rem;
   color: var(--text-primary);
   background: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(181, 168, 154, 0.3);
+  border: 1px solid rgba(140, 130, 120, 0.3);
   border-radius: 6px;
   transition: all 0.2s ease;
 }
@@ -617,7 +616,7 @@ textarea:focus {
   outline: none;
   border-color: var(--accent-primary);
   background: rgba(255, 255, 255, 1);
-  box-shadow: 0 0 0 3px rgba(200, 154, 103, 0.1);
+  box-shadow: 0 0 0 3px rgba(195, 115, 95, 0.1);
 }
 
 textarea {
@@ -639,9 +638,9 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background: var(--warm-brass);
+  background: var(--accent-secondary);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(200, 154, 103, 0.3);
+  box-shadow: 0 4px 12px rgba(195, 115, 95, 0.3);
 }
 
 button[type="submit"]:active {
@@ -660,7 +659,7 @@ button[type="submit"]:focus {
 .footer-nav {
   text-align: center;
   padding: var(--space-lg) var(--container-padding);
-  border-top: 1px solid rgba(18, 18, 18, 0.08);
+  border-top: 1px solid rgba(44, 68, 53, 0.08);
 }
 
 .footer-nav a {
@@ -826,7 +825,7 @@ time {
 
 .post-preview {
   padding: var(--space-md) 0;
-  border-bottom: 1px solid rgba(18, 18, 18, 0.08);
+  border-bottom: 1px solid rgba(44, 68, 53, 0.08);
 }
 
 .post-preview:last-child {
@@ -870,7 +869,7 @@ time {
 
 .post-content hr {
   border: none;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-top: 1px solid rgba(44, 68, 53, 0.05);
   margin: 3.5rem 0;
 }
 
@@ -1032,7 +1031,7 @@ time {
 
 .blog-listing article {
   padding: 2rem 0;
-  border-top: 1px solid rgba(0,0,0,0.06);
+  border-top: 1px solid rgba(44, 68, 53, 0.06);
 }
 
 .blog-listing article:first-of-type {
