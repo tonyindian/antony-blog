@@ -1,17 +1,19 @@
 {
   "name": "antony-blog",
   "version": "1.0.0",
-  "description": "",
+  "description": "Professional voice actor portfolio with Eleventy SSG",
   "main": "index.js",
   "scripts": {
-    "start": "eleventy --serve",
-    "build": "npm run build:ts && eleventy",
+    "start": "npm run build:ts && npx @11ty/eleventy --serve",
+    "build": "npm run build:ts && npm run build:11ty",
     "build:ts": "tsc",
-    "dev": "npm run build:ts -- --watch",
-    "lint:colors": "node scripts/check-colors.js"
+    "build:11ty": "npx @11ty/eleventy",
+    "dev": "tsc --watch & npx @11ty/eleventy --serve",
+    "lint:colors": "node scripts/check-colors.js",
+    "clean": "rm -rf _site dist src/assets/js/*.js src/assets/js/*.js.map"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["eleventy", "portfolio", "voice-actor", "typescript"],
+  "author": "Antony Alex",
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",

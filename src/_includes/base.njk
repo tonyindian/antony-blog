@@ -121,15 +121,7 @@
     <p>© 2025 antony alex</p>
   </footer>
 
-  <script>
-    if ("serviceWorker" in navigator) {
-      window.addEventListener("load", function () {
-        navigator.serviceWorker.register("/sw.js").catch(function (error) {
-          console.error("Service Worker registration failed:", error);
-        });
-      });
-    }
-  </script>
+  <script src="/assets/js/sw-register.js" defer></script>
   {% if page.url == "/" %}
   <script src="/assets/js/demos.js" defer></script>
   {% endif %}
