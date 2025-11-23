@@ -1,4 +1,10 @@
 /* ========================================
+   CSS LAYERS (Modern CSS Architecture)
+   ======================================== */
+
+@layer reset, base, components, utilities, responsive;
+
+/* ========================================
    FONT LOADING (LOCAL)
    ======================================== */
 
@@ -106,6 +112,21 @@
   --header-height: 60px;
   --header-offset: clamp(100px, 14vh, 140px);
   --header-offset-mobile: 110px;
+
+  /* Breakpoints (Modern CSS Custom Properties) */
+  --breakpoint-small: 390px;
+  --breakpoint-mobile: 640px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1024px;
+  --breakpoint-wide: 1280px;
+
+  /* Touch Targets (Apple HIG) */
+  --touch-target-min: 44px;
+
+  /* Container Query Breakpoints */
+  --container-sm: 280px;
+  --container-md: 400px;
+  --container-lg: 600px;
 }
 
 /* ========================================
@@ -137,7 +158,8 @@ body {
    TYPOGRAPHY SCALE
    ======================================== */
 
-h1, h2, h3 {
+/* Modern CSS: :where() for low-specificity defaults */
+:where(h1, h2, h3) {
   font-family: var(--font-serif);
   font-weight: 600;
   line-height: 1.1;
@@ -162,7 +184,7 @@ h3 {
 p {
   font-size: 1.05rem;
   line-height: 1.7;
-  margin-bottom: 1.25rem;
+  margin-block-end: 1.25rem; /* Modern CSS: Logical Property for i18n */
 }
 
 a {
@@ -176,6 +198,12 @@ a:hover {
 }
 
 a:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Modern CSS: :is() for grouping selectors */
+:is(a, button):focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 2px;
 }
@@ -224,10 +252,17 @@ a:focus {
   color: rgba(254, 253, 251, 0.8);
   text-transform: lowercase;
   letter-spacing: 0.02em;
-}
 
-.site-header nav a:hover {
-  color: rgb(254, 253, 251);
+  /* Modern CSS Nesting */
+  &:hover {
+    color: rgb(254, 253, 251);
+  }
+
+  &:focus-visible {
+    outline: 2px solid rgba(254, 253, 251, 0.8);
+    outline-offset: 4px;
+    border-radius: 2px;
+  }
 }
 
 /* ========================================
@@ -314,11 +349,19 @@ section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--space-md);
+  container-type: inline-size;
 }
 
-@media (min-width: 1024px) {
+/* Container Query: Responsive Grid based on container width */
+@container (min-width: 1024px) {
   .demos-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@container (min-width: 768px) and (max-width: 1023px) {
+  .demos-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -330,12 +373,47 @@ section {
   display: flex;
   flex-direction: column;
   transition: all 0.3s ease;
+  container-type: inline-size;
+  container-name: demo-card;
 }
 
 .demo-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 24px rgba(44, 68, 53, 0.08);
   border-color: var(--color-accent);
+}
+
+/* Modern CSS: :has() for parent styling based on children */
+.demo-card:has(.demo-placeholder) {
+  opacity: 0.7;
+  cursor: default;
+}
+
+.demo-card:has(button:disabled) {
+  opacity: 0.8;
+}
+
+/* Container Queries for Demo Cards */
+@container demo-card (max-width: 250px) {
+  .demo-card h3 {
+    font-size: 1.25rem;
+  }
+
+  .demo-play-button {
+    padding: 0.625rem 1.5rem;
+    font-size: 0.875rem;
+  }
+}
+
+@container demo-card (min-width: 350px) {
+  .demo-card h3 {
+    font-size: 1.75rem;
+  }
+
+  .demo-play-button {
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
+  }
 }
 
 .demo-meta {
@@ -605,6 +683,16 @@ section {
   grid-template-columns: 1fr 2fr;
   gap: var(--space-lg);
   margin-top: var(--space-lg);
+  container-type: inline-size;
+  container-name: contact-grid;
+}
+
+/* Container Query: Stack on narrow containers */
+@container contact-grid (max-width: 600px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
 }
 
 .contact-direct h3,
