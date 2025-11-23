@@ -1,10 +1,61 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
+const Image = require("@11ty/eleventy-img");
+
+/**
+ * Image optimization shortcode
+ * Generates responsive images in AVIF, WebP, and JPEG formats
+ */
+async function imageShortcode(src, alt, sizes = "100vw") {
+  const metadata = await Image(src, {
+    widths: [400, 800, 1200, 1800],
+    formats: ["avif", "webp", "jpeg"],
+    outputDir: "./_site/assets/images/",
+    urlPath: "/assets/images/",
+    filenameFormat: function (id, src, width, format) {
+      const extension = format;
+      const name = src.split('/').pop().split('.')[0];
+      return `${name}-${width}w.${extension}`;
+    }
+  });
+
+  const imageAttributes = {
+    alt,
+    sizes,
+    loading: "lazy",
+    decoding: "async",
+  };
+
+  return Image.generateHTML(metadata, imageAttributes);
+}
+
+/**
+ * OG Image optimization (single size, high quality)
+ */
+async function ogImageShortcode(src) {
+  const metadata = await Image(src, {
+    widths: [1200],
+    formats: ["jpeg"],
+    outputDir: "./_site/assets/",
+    urlPath: "/assets/",
+    filenameFormat: function (id, src, width, format) {
+      return `og-default.jpg`;
+    },
+    sharpJpegOptions: {
+      quality: 85,
+      progressive: true
+    }
+  });
+
+  const data = metadata.jpeg[0];
+  return data.url;
+}
 
 module.exports = function(eleventyConfig) {
 
-  // Static assets pass-through
+  // Static assets pass-through (exclude images, they're processed)
   eleventyConfig.addPassthroughCopy("src/css");
-  eleventyConfig.addPassthroughCopy("src/assets");
+  eleventyConfig.addPassthroughCopy("src/assets/icons");
+  eleventyConfig.addPassthroughCopy("src/assets/js");
   eleventyConfig.addPassthroughCopy("src/demos");
   eleventyConfig.addPassthroughCopy("src/fonts");
 
@@ -14,7 +65,12 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/robots.txt");
   eleventyConfig.addPassthroughCopy("src/llms.txt");
   eleventyConfig.addPassthroughCopy("src/_headers");
-  
+
+  // Image optimization shortcodes
+  eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
+  eleventyConfig.addLiquidShortcode("image", imageShortcode);
+  eleventyConfig.addNunjucksAsyncShortcode("ogImage", ogImageShortcode);
+
   eleventyConfig.addPlugin(pluginRss);
   
   // RSS Filter manuell registrieren

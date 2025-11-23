@@ -12,11 +12,17 @@
     "lint:colors": "node scripts/check-colors.js",
     "clean": "rm -rf _site dist src/assets/js/*.js src/assets/js/*.js.map"
   },
-  "keywords": ["eleventy", "portfolio", "voice-actor", "typescript"],
+  "keywords": [
+    "eleventy",
+    "portfolio",
+    "voice-actor",
+    "typescript"
+  ],
   "author": "Antony Alex",
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
+    "@11ty/eleventy-img": "^6.0.4",
     "@11ty/eleventy-plugin-rss": "^2.0.4",
     "typescript": "^5.9.3"
   }
