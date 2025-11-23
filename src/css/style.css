@@ -174,7 +174,7 @@ a:focus {
    HEADER
    ======================================== */
 
-header {
+.site-header {
   position: fixed;
   top: 0;
   left: 0;
@@ -186,7 +186,7 @@ header {
   padding: var(--space-sm) var(--container-padding);
 }
 
-header .header-inner {
+.site-header .header-inner {
   max-width: var(--max-width);
   margin: 0 auto;
   display: flex;
@@ -194,7 +194,7 @@ header .header-inner {
   align-items: center;
 }
 
-header .logo {
+.site-header .logo {
   font-family: var(--font-sans);
   font-size: 1.05rem;
   font-weight: 600;
@@ -203,12 +203,12 @@ header .logo {
   text-decoration: none;
 }
 
-header nav {
+.site-header nav {
   display: flex;
   gap: var(--space-md);
 }
 
-header nav a {
+.site-header nav a {
   font-size: 1rem;
   font-weight: 500;
   color: var(--text-secondary);
@@ -216,7 +216,7 @@ header nav a {
   letter-spacing: 0.02em;
 }
 
-header nav a:hover {
+.site-header nav a:hover {
   color: var(--accent-primary);
 }
 
@@ -697,12 +697,12 @@ footer {
   body {
     font-size: 17px;
   }
-  
-  header nav {
+
+  .site-header nav {
     gap: var(--space-sm);
   }
-  
-  header nav a {
+
+  .site-header nav a {
     font-size: 0.9rem;
   }
   
@@ -903,7 +903,7 @@ time {
 @media (max-width: 640px) {
 
   /* Header compact */
-  header.site-header {
+  .site-header {
     padding: 0.8rem 1rem;
   }
 
@@ -1062,7 +1062,7 @@ time {
    ======================================== */
 
 @media (min-width: 720px) and (max-width: 1023px) {
-  header.site-header {
+  .site-header {
     padding: 1.2rem 2.4rem;
   }
 
@@ -1081,7 +1081,7 @@ time {
    ======================================== */
 
 @media (min-width: 960px) {
-  header.site-header {
+  .site-header {
     padding: 1.4rem 3rem;
   }
 
