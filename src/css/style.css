@@ -504,7 +504,7 @@ section {
 
 /* About page (article-style layout) */
 .about-page {
-  padding: clamp(100px, 14vh, 140px) var(--container-padding) clamp(60px, 10vh, 100px);
+  padding: 0;
   background: var(--bg-primary);
 }
 
@@ -749,10 +749,11 @@ footer {
    ======================================== */
 
 body.blog-page main,
-body.post-page main {
+body.post-page main,
+body.default-page main {
   max-width: 840px;
   margin: 0 auto;
-  padding: clamp(80px, 14vh, 140px) var(--container-padding);
+  padding: clamp(100px, 14vh, 140px) var(--container-padding) clamp(60px, 10vh, 100px);
 }
 
 body.home main {
@@ -903,7 +904,8 @@ time {
 
   /* Main content narrower and more comfortable */
   body.blog-page main,
-  body.post-page main {
+  body.post-page main,
+  body.default-page main {
     padding: 110px 1.25rem 50px;
   }
 
