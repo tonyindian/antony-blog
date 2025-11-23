@@ -179,9 +179,9 @@ a:focus {
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(243, 242, 238, 0.95);
+  background: rgba(44, 68, 53, 0.95);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(44, 68, 53, 0.08);
+  border-bottom: 1px solid rgba(44, 68, 53, 0.14);
   padding: var(--space-sm) var(--container-padding);
 }
 
@@ -198,7 +198,7 @@ a:focus {
   font-size: 1.05rem;
   font-weight: 600;
   letter-spacing: 0.05em;
-  color: var(--text-primary);
+  color: rgb(254, 253, 251);
   text-decoration: none;
 }
 
@@ -210,13 +210,13 @@ a:focus {
 .site-header nav a {
   font-size: 1rem;
   font-weight: 500;
-  color: var(--text-secondary);
+  color: rgba(254, 253, 251, 0.8);
   text-transform: lowercase;
   letter-spacing: 0.02em;
 }
 
 .site-header nav a:hover {
-  color: var(--accent-primary);
+  color: rgb(254, 253, 251);
 }
 
 /* ========================================
