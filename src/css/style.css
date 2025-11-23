@@ -66,8 +66,8 @@
   /* Colors */
   --carriage-wood: #C89A67;
   --warm-brass: #C6A66C;
-  --table-linen: #F4EFE6;
-  --piano-black: #121212;
+  --table-linen: rgb(243, 242, 238);
+  --piano-black: rgb(44, 68, 53);
   --warm-taupe: #B5A89A;
   --terracotta: #D4745F;
   
@@ -180,7 +180,7 @@ a:focus {
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(244, 239, 230, 0.95);
+  background: rgba(243, 242, 238, 0.95);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(18, 18, 18, 0.08);
   padding: var(--space-sm) var(--container-padding);
@@ -441,7 +441,7 @@ section {
 }
 
 .demo-video-inner {
-  background: rgba(244, 239, 230, 0.98);
+  background: rgba(243, 242, 238, 0.98);
   border-radius: 12px;
   padding: var(--space-md);
   max-width: 960px;
