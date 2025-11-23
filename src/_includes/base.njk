@@ -97,12 +97,12 @@
   <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
   <header role="banner">
     <div class="header-inner">
-      <a href="/" class="logo" aria-current="{{ page.url == '/' ? 'page' : undefined }}">antony alex</a>
+      <a href="/" class="logo"{% if page.url == "/" %} aria-current="page"{% endif %}>antony alex</a>
       <nav aria-label="Hauptnavigation">
-        <a href="/#hoerbeispiele" aria-current="{{ page.url == '/' ? 'true' : undefined }}">Hörbeispiele</a>
-        <a href="/#about" aria-current="{{ page.url == '/' ? 'true' : undefined }}">Stimme</a>
-        <a href="/about/" aria-current="{{ page.url startsWith '/about' ? 'page' : undefined }}">Über mich</a>
-        <a href="/#kontakt" aria-current="{{ page.url == '/' ? 'true' : undefined }}">Kontakt</a>
+        <a href="/#hoerbeispiele"{% if page.url == "/" %} aria-current="true"{% endif %}>Hörbeispiele</a>
+        <a href="/#about"{% if page.url == "/" %} aria-current="true"{% endif %}>Stimme</a>
+        <a href="/about/"{% if page.url.indexOf('/about') == 0 %} aria-current="page"{% endif %}>Über mich</a>
+        <a href="/#kontakt"{% if page.url == "/" %} aria-current="true"{% endif %}>Kontakt</a>
       </nav>
     </div>
   </header>
@@ -112,7 +112,7 @@
     {{ content | safe }}
   {% else %}
     <!-- Blog pages: With main wrapper -->
-    <main>
+    <main id="main-content" role="main">
       {{ content | safe }}
     </main>
   {% endif %}
