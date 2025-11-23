@@ -380,7 +380,7 @@ section {
 
 .demo-card h3 {
   font-size: 1.5rem;
-  margin-bottom: var(--space-xs);
+  margin-bottom: 0;
 }
 
 .demo-description {
@@ -404,7 +404,7 @@ section {
 }
 
 .demo-play-button {
-  margin-top: auto;
+  margin-top: var(--space-md);
   padding: 0.75rem 1.75rem;
   font-family: var(--font-sans);
   font-size: 0.95rem;
