@@ -934,6 +934,44 @@ button[type="submit"]:focus {
   outline-offset: 2px;
 }
 
+/* Tally Button */
+.tally-button {
+  padding: 1rem 2.5rem;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-paper-white);
+  background: var(--color-accent);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+  max-width: 300px;
+}
+
+.tally-button:hover {
+  background: var(--color-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(44, 68, 53, 0.3);
+}
+
+.tally-button:active {
+  transform: translateY(0);
+}
+
+.tally-button:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.contact-form p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-md);
+}
+
 /* ========================================
    FOOTER NAVIGATION
    ======================================== */
