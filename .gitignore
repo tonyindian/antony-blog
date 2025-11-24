@@ -11,3 +11,4 @@ src/assets/js/*.js
 src/assets/js/*.js.map
 !src/assets/js/sw-register.js
 !src/assets/js/mobile-menu.js
+.env
