@@ -2,7 +2,7 @@
 layout: post.njk
 title: Datenschutzerklärung
 description: Informationen zum Datenschutz und zur Verarbeitung personenbezogener Daten auf antony.ch
-date: 2025-11-23
+date: 2025-11-24
 sitemap:
   priority: 0.3
   changefreq: yearly
@@ -10,7 +10,7 @@ sitemap:
 
 # Datenschutzerklärung
 
-**Stand: 23. November 2025**
+**Stand: 24. November 2025**
 
 ## 1. Verantwortlicher
 
@@ -45,7 +45,13 @@ Weitere Informationen: [Netlify Privacy Policy](https://www.netlify.com/privacy/
 
 ## 4. Kontaktaufnahme
 
-Bei Kontaktaufnahme über das Formular werden folgende Daten gespeichert:
+Bei Kontaktaufnahme über das Formular verwenden wir **Tally** (tally.so):
+
+Tally Forms AG
+Sihlquai 131
+8005 Zürich, Schweiz
+
+Bei Nutzung des Kontaktformulars werden folgende Daten an Tally übermittelt und gespeichert:
 - Name (optional)
 - E-Mail-Adresse
 - Nachrichteninhalt
@@ -53,6 +59,8 @@ Bei Kontaktaufnahme über das Formular werden folgende Daten gespeichert:
 **Zweck:** Beantwortung Ihrer Anfrage
 **Rechtsgrundlage:** Art. 6 Abs. 1 lit. a DSGVO (Einwilligung)
 **Speicherdauer:** Bis zur vollständigen Bearbeitung, danach Löschung
+
+Weitere Informationen: [Tally Privacy Policy](https://tally.so/help/privacy-policy)
 
 ## 5. SSL/TLS-Verschlüsselung
 
@@ -110,4 +118,4 @@ Wir behalten uns vor, diese Datenschutzerklärung anzupassen, um sie an geänder
 
 ---
 
-**Letzte Aktualisierung:** 23. November 2025
+**Letzte Aktualisierung:** 24. November 2025
