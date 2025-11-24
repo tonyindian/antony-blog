@@ -2,23 +2,32 @@ User-agent: *
 Allow: /
 Disallow: /demos/
 
+# AEO-Optimierung (November 2025): AI-Bots dürfen alle Inhalte crawlen
+# außer Demo-Audio-Dateien zum Schutz der Hörbeispiele
+
 User-agent: GPTBot
-Disallow: /
+Allow: /
+Disallow: /demos/
 
 User-agent: OAI-SearchBot
-Disallow: /
+Allow: /
+Disallow: /demos/
 
 User-agent: PerplexityBot
-Disallow: /
+Allow: /
+Disallow: /demos/
 
 User-agent: CCBot
-Disallow: /
+Allow: /
+Disallow: /demos/
 
 User-agent: anthropic-ai
-Disallow: /
+Allow: /
+Disallow: /demos/
 
 User-agent: Claude-Web
-Disallow: /
+Allow: /
+Disallow: /demos/
 
 # Sitemap
 Sitemap: https://www.antony.ch/sitemap.xml

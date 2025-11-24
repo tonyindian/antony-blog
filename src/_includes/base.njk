@@ -8,7 +8,7 @@
   {% if description %}
   <meta name="description" content="{{ description }}">
   {% else %}
-  <meta name="description" content="Sprecher · Warmer Bariton. Brand-Stories, Dokumentationen, hochwertige Werbung. Sprachen: Deutsch, CH-Deutsch (Zürich), Englisch (leicht deutscher Akzent). Speech Academy Zürich, Diplom 2025.">
+  <meta name="description" content="Professioneller Sprecher & Voice Actor mit warmem Bariton. Werbung, Hörbuch, Dokumentation, Synchron. Deutsch, Schweizerdeutsch, Englisch. ► Hörproben!">
   {% endif %}
   
   <!-- Canonical URL -->
@@ -16,7 +16,7 @@
   
   <!-- Open Graph -->
   <meta property="og:title" content="{% if title %}{{ title }}{% else %}antony alex | Sprecher · Warmer Bariton. Deutsch &amp; Englisch.{% endif %}">
-  <meta property="og:description" content="{% if description %}{{ description }}{% else %}Sprecher · Warmer Bariton. Brand-Stories, Dokumentationen, hochwertige Werbung. Sprachen: Deutsch, CH-Deutsch (Zürich), Englisch (leicht deutscher Akzent). Speech Academy Zürich, Diplom 2025.{% endif %}">
+  <meta property="og:description" content="{% if description %}{{ description }}{% else %}Professioneller Sprecher & Voice Actor mit warmem Bariton. Werbung, Hörbuch, Dokumentation, Synchron. Deutsch, Schweizerdeutsch, Englisch. ► Hörproben!{% endif %}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ site.url }}{{ page.url }}">
   <meta property="og:locale" content="de_CH">
@@ -27,18 +27,20 @@
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{% if title %}{{ title }}{% else %}antony alex | Sprecher · Warmer Bariton. Deutsch &amp; Englisch.{% endif %}">
-  <meta name="twitter:description" content="{% if description %}{{ description }}{% else %}Sprecher · Warmer Bariton. Brand-Stories, Dokumentationen, hochwertige Werbung. Sprachen: Deutsch, CH-Deutsch (Zürich), Englisch (leicht deutscher Akzent). Speech Academy Zürich, Diplom 2025.{% endif %}">
+  <meta name="twitter:description" content="{% if description %}{{ description }}{% else %}Professioneller Sprecher & Voice Actor mit warmem Bariton. Werbung, Hörbuch, Dokumentation, Synchron. Deutsch, Schweizerdeutsch, Englisch. ► Hörproben!{% endif %}">
   <meta name="twitter:image" content="{{ site.url }}{{ ogImage }}">
   
-  <!-- JSON-LD Structured Data -->
+  <!-- JSON-LD Structured Data (SEO & AEO Optimized) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Antony Alex",
-    "jobTitle": "Sprecher",
+    "jobTitle": ["Voice Actor", "Sprecher", "Voice Over Artist"],
+    "description": "Professional voice actor and speaker with warm baritone for commercials, documentaries, and brand stories. German, Swiss German, English.",
     "url": "{{ site.url }}",
-    "knowsLanguage": ["de", "en"],
+    "email": "mail@antony.ch",
+    "knowsLanguage": ["de", "de-CH", "en"],
     "areaServed": [
       {
         "@type": "Country",
@@ -51,7 +53,7 @@
     ],
     "alumniOf": {
       "@type": "EducationalOrganization",
-      "name": "Speech Academy"
+      "name": "Speech Academy Schweiz"
     },
     "knowsAbout": [
       "Commercial Voice Over",
