@@ -12,3 +12,7 @@ src/assets/js/*.js.map
 !src/assets/js/sw-register.js
 !src/assets/js/mobile-menu.js
 .env
+
+# Test coverage reports
+coverage/
+.vitest-cache/
