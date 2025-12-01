@@ -1,12 +1,38 @@
-# Test Coverage Summary: demos.ts
+# Test Coverage Summary
 
 ## 📊 Test Results
 
-✅ **All 22 tests passing**
-⏱️ **Execution time**: ~300ms
-🎯 **Coverage**: 100% of intended functionality
+✅ **All 49 tests passing** (27 mobile-menu + 22 demos)
+⏱️ **Execution time**: ~350ms
+🎯 **Coverage**: 100% of intended functionality for interactive components
 
 ## 🧪 Test Suite Overview
+
+### Mobile Menu Tests (27 tests)
+
+| Test Case | Status | Description |
+|-----------|--------|-------------|
+| Initialization (3 tests) | ✅ | Handles missing elements gracefully |
+| Menu Toggle (3 tests) | ✅ | Opens/closes menu, updates ARIA attributes |
+| Focus Management (3 tests) | ✅ | Stores/restores focus, focuses first link on open |
+| Keyboard Navigation (6 tests) | ✅ | Escape to close, Tab focus trap (forward/backward) |
+| Click Outside (4 tests) | ✅ | Closes on outside click, stays open on nav/toggle click |
+| Nav Link Clicks (2 tests) | ✅ | Closes menu with delay for navigation |
+| Window Resize (3 tests) | ✅ | Closes menu when resizing to desktop (>768px) |
+| iOS Touch Prevention (2 tests) | ✅ | Prevents scroll when menu open, allows when closed |
+| Event Listeners (1 test) | ✅ | Attaches all listeners correctly |
+
+**Key Functionality Covered:**
+- ✅ Menu toggle (open/close)
+- ✅ ARIA attributes (aria-expanded, aria-label)
+- ✅ Focus management (store/restore, first link focus)
+- ✅ Keyboard navigation (Escape, Tab, Shift+Tab)
+- ✅ Focus trap (boundaries: toggle ↔ links)
+- ✅ Click-outside-to-close
+- ✅ Navigation link clicks
+- ✅ Responsive behavior (auto-close on desktop resize)
+- ✅ iOS touch scroll prevention
+- ✅ Event listener integration
 
 ### Audio Demo Player Tests (8 tests)
 
@@ -185,11 +211,13 @@ if (typeof window !== 'undefined') {
 
 ## 🚀 Next Steps
 
+### Completed
+1. ✅ Tests for demos.ts (22 tests - COMPLETED)
+2. ✅ Tests for mobile-menu.js (27 tests - COMPLETED)
+
 ### Immediate Priorities
-1. ✅ Tests for demos.ts (COMPLETED)
-2. ⏳ Tests for mobile-menu.js
-3. ⏳ Tests for Service Worker
-4. ⏳ Tests for design tokens
+3. ⏳ Tests for Service Worker (sw.js - 147 lines)
+4. ⏳ Tests for design tokens (tokens.ts - 363 lines)
 
 ### Future Enhancements
 - [ ] End-to-end tests with Playwright
@@ -202,14 +230,15 @@ if (typeof window !== 'undefined') {
 
 All test documentation is available in:
 - `test/README.md` - Comprehensive testing guide
-- `src/assets/js/__tests__/demos.test.ts` - Inline test documentation
+- `src/assets/js/__tests__/demos.test.ts` - 22 tests for audio/video demos
+- `src/assets/js/__tests__/mobile-menu.test.ts` - 27 tests for mobile navigation
 - This file - Coverage summary
 
 ## 🎉 Success Metrics
 
-✅ **22/22 tests passing** (100%)
+✅ **49/49 tests passing** (100%)
 ✅ **Fast execution** (< 2 seconds)
-✅ **Comprehensive coverage** (all functionality tested)
+✅ **Comprehensive coverage** (all interactive components tested)
 ✅ **Well-documented** (README + inline comments)
 ✅ **Production-ready** (CI/CD compatible)
 ✅ **Maintainable** (clear patterns, minimal duplication)
@@ -217,6 +246,8 @@ All test documentation is available in:
 ---
 
 **Test Infrastructure Status**: ✅ COMPLETE
-**Test Coverage for demos.ts**: ✅ COMPREHENSIVE
+**Test Coverage for Interactive Components**: ✅ COMPREHENSIVE
+- demos.ts: ✅ 22 tests
+- mobile-menu.js: ✅ 27 tests
 **Ready for CI/CD**: ✅ YES
 **Documentation**: ✅ COMPLETE
