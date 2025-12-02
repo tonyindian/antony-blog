@@ -2,11 +2,33 @@
 
 ## 📊 Test Results
 
-✅ **All 49 tests passing** (27 mobile-menu + 22 demos)
-⏱️ **Execution time**: ~350ms
+✅ **All 74 tests passing** (25 service worker + 27 mobile-menu + 22 demos)
+⏱️ **Execution time**: ~390ms
 🎯 **Coverage**: 100% of intended functionality for interactive components
 
 ## 🧪 Test Suite Overview
+
+### Service Worker Tests (25 tests)
+
+| Test Case | Status | Description |
+|-----------|--------|-------------|
+| Install Event (4 tests) | ✅ | Caches critical assets, calls skipWaiting, error handling |
+| Activate Event (5 tests) | ✅ | Deletes old caches, keeps current, calls clients.claim() |
+| Fetch Event (12 tests) | ✅ | Network-first with cache fallback, request filtering |
+| Message Event (4 tests) | ✅ | Handles SKIP_WAITING and CLEAR_CACHE messages |
+
+**Key Functionality Covered:**
+- ✅ Install event (cache critical assets, skipWaiting)
+- ✅ Activate event (cleanup old caches, clients.claim)
+- ✅ Fetch event (Network-First strategy)
+- ✅ Cache management (version-based cleanup)
+- ✅ Request filtering (GET only, same-origin, skip /demos/)
+- ✅ Network-first with cache fallback
+- ✅ Offline fallback (return / for documents, 503 for others)
+- ✅ Response caching (successful responses only)
+- ✅ Message event (SKIP_WAITING, CLEAR_CACHE)
+- ✅ Client notifications (CACHE_CLEARED)
+- ✅ Error handling (graceful degradation)
 
 ### Mobile Menu Tests (27 tests)
 
@@ -122,6 +144,8 @@
 - ✅ HTMLMediaElement methods
 - ✅ Event dispatching
 - ✅ Promise-based async operations
+- ✅ Service Worker APIs (Cache, CacheStorage, ExtendableEvent, FetchEvent)
+- ✅ Clients API (matchAll, claim, postMessage)
 
 ## 📈 Code Quality Metrics
 
@@ -159,6 +183,7 @@
 ### Configuration Files
 - ✅ `vitest.config.ts` - Vitest configuration with coverage thresholds
 - ✅ `test/setup.ts` - Global test setup and Audio API mock
+- ✅ `test/sw-setup.ts` - Service Worker API mocks (Cache, Clients, Events)
 - ✅ `test/README.md` - Comprehensive testing documentation
 
 ### NPM Scripts
@@ -214,9 +239,9 @@ if (typeof window !== 'undefined') {
 ### Completed
 1. ✅ Tests for demos.ts (22 tests - COMPLETED)
 2. ✅ Tests for mobile-menu.js (27 tests - COMPLETED)
+3. ✅ Tests for Service Worker (sw.js - 25 tests - COMPLETED)
 
-### Immediate Priorities
-3. ⏳ Tests for Service Worker (sw.js - 147 lines)
+### Remaining Priorities
 4. ⏳ Tests for design tokens (tokens.ts - 363 lines)
 
 ### Future Enhancements
@@ -232,12 +257,13 @@ All test documentation is available in:
 - `test/README.md` - Comprehensive testing guide
 - `src/assets/js/__tests__/demos.test.ts` - 22 tests for audio/video demos
 - `src/assets/js/__tests__/mobile-menu.test.ts` - 27 tests for mobile navigation
+- `src/__tests__/sw.test.ts` - 25 tests for Service Worker
 - This file - Coverage summary
 
 ## 🎉 Success Metrics
 
-✅ **49/49 tests passing** (100%)
-✅ **Fast execution** (< 2 seconds)
+✅ **74/74 tests passing** (100%)
+✅ **Fast execution** (~2.2 seconds)
 ✅ **Comprehensive coverage** (all interactive components tested)
 ✅ **Well-documented** (README + inline comments)
 ✅ **Production-ready** (CI/CD compatible)
@@ -247,7 +273,8 @@ All test documentation is available in:
 
 **Test Infrastructure Status**: ✅ COMPLETE
 **Test Coverage for Interactive Components**: ✅ COMPREHENSIVE
-- demos.ts: ✅ 22 tests
+- sw.js: ✅ 25 tests
 - mobile-menu.js: ✅ 27 tests
+- demos.ts: ✅ 22 tests
 **Ready for CI/CD**: ✅ YES
 **Documentation**: ✅ COMPLETE
