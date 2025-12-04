@@ -12,7 +12,11 @@
     "build:prod": "ELEVENTY_ENV=production npm run build",
     "dev": "tsc --watch & npx @11ty/eleventy --serve",
     "lint:colors": "node scripts/check-colors.js",
-    "clean": "rm -rf _site dist src/assets/js/*.js src/assets/js/*.js.map"
+    "clean": "rm -rf _site dist src/assets/js/*.js src/assets/js/*.js.map",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage"
   },
   "keywords": [
     "eleventy",
@@ -26,9 +30,14 @@
     "@11ty/eleventy": "^3.1.2",
     "@11ty/eleventy-img": "^6.0.4",
     "@11ty/eleventy-plugin-rss": "^2.0.4",
+    "@vitest/coverage-v8": "^4.0.14",
+    "@vitest/ui": "^4.0.14",
     "clean-css": "^5.3.3",
     "clean-css-cli": "^5.6.3",
+    "happy-dom": "^20.0.11",
     "html-minifier-terser": "^7.2.0",
-    "typescript": "^5.9.3"
+    "jsdom": "^27.2.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.14"
   }
 }

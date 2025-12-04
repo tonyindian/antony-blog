@@ -3,7 +3,6 @@ _site/
 dist/
 .DS_Store
 *.log
-netlify.toml
 src/demos/*.mov
 
 # TypeScript compiled output (but keep sw-register.js and mobile-menu.js)
@@ -12,3 +11,7 @@ src/assets/js/*.js.map
 !src/assets/js/sw-register.js
 !src/assets/js/mobile-menu.js
 .env
+
+# Test coverage reports
+coverage/
+.vitest-cache/
