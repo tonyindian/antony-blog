@@ -26,7 +26,7 @@ export default defineConfig({
       statements: 80,
     },
     include: ['**/*.{test,spec}.{js,ts}'],
-    exclude: ['node_modules', 'dist', '_site'],
+    exclude: ['node_modules', 'dist', '_site', '.netlify'],
   },
   resolve: {
     alias: {
