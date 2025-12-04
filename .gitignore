@@ -3,7 +3,6 @@ _site/
 dist/
 .DS_Store
 *.log
-netlify.toml
 src/demos/*.mov
 
 # TypeScript compiled output (but keep sw-register.js and mobile-menu.js)

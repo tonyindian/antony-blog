@@ -1,0 +1,33 @@
+# Netlify Build Configuration
+[build]
+  # Run tests before building - build fails if tests fail
+  command = "npm run test:run && npm run build"
+  publish = "_site"
+
+# Build environment
+[build.environment]
+  NODE_VERSION = "20"
+
+# Headers for security and caching
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Redirect rules (if needed)
+[[redirects]]
+  from = "/demos/*"
+  to = "/demos/:splat"
+  status = 200
