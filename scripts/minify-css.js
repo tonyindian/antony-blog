@@ -26,12 +26,15 @@ if (!fs.existsSync(cssFile)) {
 
 let css = fs.readFileSync(cssFile, 'utf8');
 
-// Manually inline _tokens.css if it exists
-if (fs.existsSync(tokensFile)) {
-  const tokensCSS = fs.readFileSync(tokensFile, 'utf8');
-  // Replace @import statement with actual tokens content
-  css = css.replace(/@import\s+url\(['"]?\.?\/?_tokens\.css['"]?\);?/g, tokensCSS);
-  console.log('✅ Inlined _tokens.css into style.css');
+// Note: Token inlining now happens in build:inline-tokens step
+// This check is kept for backward compatibility
+if (css.includes('@import')) {
+  console.log('⚠️  Warning: @import found in CSS, tokens should be inlined before minification');
+  if (fs.existsSync(tokensFile)) {
+    const tokensCSS = fs.readFileSync(tokensFile, 'utf8');
+    css = css.replace(/@import\s+url\(['"]?\.?\/?_tokens\.css['"]?\);?/g, tokensCSS);
+    console.log('✅ Inlined _tokens.css into style.css (fallback)');
+  }
 }
 
 const result = new CleanCSS({
