@@ -19,9 +19,9 @@ export const COLORS = {
     white: '#FEFDFB',
   },
   accent: {
-    DEFAULT: '#2B4A62',    // Deep slate blue - primary brand color
-    hover: '#1F3749',      // Darker midnight blue for hover states
-    light: '#4E6E88',      // Lighter slate for subtle accents
+    DEFAULT: '#2C4435',    // Sage green - primary brand color
+    hover: '#1F3327',      // Darker sage green for hover states
+    light: '#4E6E5A',      // Lighter sage for subtle accents
   },
   warm: {
     DEFAULT: '#8B7355',    // Warm brown - DECORATIVE ONLY (borders, backgrounds)
@@ -246,17 +246,17 @@ export const LAYOUT = {
 // Alpha (transparency) variants for colors
 export const ALPHA = {
   accent: {
-    95: 'rgba(43, 74, 98, 0.95)',    // #2B4A62 at 95% opacity
-    98: 'rgba(43, 74, 98, 0.98)',    // #2B4A62 at 98% opacity
-    60: 'rgba(43, 74, 98, 0.6)',     // #2B4A62 at 60% opacity
-    50: 'rgba(43, 74, 98, 0.5)',     // #2B4A62 at 50% opacity
-    35: 'rgba(43, 74, 98, 0.35)',    // #2B4A62 at 35% opacity
-    30: 'rgba(43, 74, 98, 0.3)',     // #2B4A62 at 30% opacity
-    14: 'rgba(43, 74, 98, 0.14)',    // #2B4A62 at 14% opacity
-    10: 'rgba(43, 74, 98, 0.1)',     // #2B4A62 at 10% opacity
-    8: 'rgba(43, 74, 98, 0.08)',     // #2B4A62 at 8% opacity
-    6: 'rgba(43, 74, 98, 0.06)',     // #2B4A62 at 6% opacity
-    5: 'rgba(43, 74, 98, 0.05)',     // #2B4A62 at 5% opacity
+    95: 'rgba(44, 68, 53, 0.95)',    // #2C4435 sage green at 95% opacity
+    98: 'rgba(44, 68, 53, 0.98)',    // #2C4435 sage green at 98% opacity
+    60: 'rgba(44, 68, 53, 0.6)',     // #2C4435 sage green at 60% opacity
+    50: 'rgba(44, 68, 53, 0.5)',     // #2C4435 sage green at 50% opacity
+    35: 'rgba(44, 68, 53, 0.35)',    // #2C4435 sage green at 35% opacity
+    30: 'rgba(44, 68, 53, 0.3)',     // #2C4435 sage green at 30% opacity
+    14: 'rgba(44, 68, 53, 0.14)',    // #2C4435 sage green at 14% opacity
+    10: 'rgba(44, 68, 53, 0.1)',     // #2C4435 sage green at 10% opacity
+    8: 'rgba(44, 68, 53, 0.08)',     // #2C4435 sage green at 8% opacity
+    6: 'rgba(44, 68, 53, 0.06)',     // #2C4435 sage green at 6% opacity
+    5: 'rgba(44, 68, 53, 0.05)',     // #2C4435 sage green at 5% opacity
   },
   warm: {
     30: 'rgba(139, 115, 85, 0.3)',   // #8B7355 at 30% opacity
