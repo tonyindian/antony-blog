@@ -17,13 +17,22 @@ if (!isProduction) {
 }
 
 const cssFile = path.join(__dirname, '../_site/css/style.css');
+const tokensFile = path.join(__dirname, '../_site/css/_tokens.css');
 
 if (!fs.existsSync(cssFile)) {
   console.error('❌ CSS file not found:', cssFile);
   process.exit(1);
 }
 
-const css = fs.readFileSync(cssFile, 'utf8');
+let css = fs.readFileSync(cssFile, 'utf8');
+
+// Manually inline _tokens.css if it exists
+if (fs.existsSync(tokensFile)) {
+  const tokensCSS = fs.readFileSync(tokensFile, 'utf8');
+  // Replace @import statement with actual tokens content
+  css = css.replace(/@import\s+url\(['"]?\.?\/?_tokens\.css['"]?\);?/g, tokensCSS);
+  console.log('✅ Inlined _tokens.css into style.css');
+}
 
 const result = new CleanCSS({
   level: 2, // Advanced optimizations
