@@ -33,6 +33,7 @@ if (!fs.existsSync(tokensSourcePath)) {
 function parseTokens(content) {
   const tokens = {
     COLORS: {},
+    ALPHA: {},
     TYPOGRAPHY: { fontFamily: {} },
     SIZES: {},
     LAYOUT: { container: {} }
@@ -53,6 +54,26 @@ function parseTokens(content) {
         const props = match[1].matchAll(/(\w+):\s*['"]([^'"]+)['"]/g);
         for (const [, key, value] of props) {
           tokens.COLORS[category][key] = value;
+        }
+      }
+    });
+  }
+
+  // Extract ALPHA (transparency variants)
+  const alphaMatch = content.match(/export const ALPHA = \{([\s\S]*?)\} as const;/);
+  if (alphaMatch) {
+    const alphaBlock = alphaMatch[1];
+
+    // Parse each alpha category
+    const alphaCategories = ['accent', 'warm', 'paper', 'white'];
+    alphaCategories.forEach(category => {
+      const regex = new RegExp(`${category}:\\s*\\{([^}]+)\\}`, 's');
+      const match = alphaBlock.match(regex);
+      if (match) {
+        tokens.ALPHA[category] = {};
+        const props = match[1].matchAll(/(\w+|\d+):\s*['"]([^'"]+)['"]/g);
+        for (const [, key, value] of props) {
+          tokens.ALPHA[category][key] = value;
         }
       }
     });
@@ -90,7 +111,7 @@ function parseTokens(content) {
 }
 
 const tokensContent = fs.readFileSync(tokensSourcePath, 'utf8');
-const { COLORS, TYPOGRAPHY, SIZES, LAYOUT } = parseTokens(tokensContent);
+const { COLORS, ALPHA, TYPOGRAPHY, SIZES, LAYOUT } = parseTokens(tokensContent);
 
 /**
  * Generate CSS custom properties from design tokens
@@ -135,6 +156,22 @@ function generateCSSVariables() {
 
   /* Hairline (Borders) */
   --color-hairline: ${COLORS.hairline.DEFAULT};
+
+  /* ========================================
+     ALPHA (TRANSPARENCY) VARIANTS
+     ======================================== */
+
+  /* Accent Alpha Variants */
+  ${Object.entries(ALPHA.accent || {}).map(([key, value]) => `--alpha-accent-${key}: ${value};`).join('\n  ')}
+
+  /* Warm Alpha Variants */
+  ${Object.entries(ALPHA.warm || {}).map(([key, value]) => `--alpha-warm-${key}: ${value};`).join('\n  ')}
+
+  /* Paper Alpha Variants */
+  ${Object.entries(ALPHA.paper || {}).map(([key, value]) => `--alpha-paper-${key}: ${value};`).join('\n  ')}
+
+  /* White Alpha Variants */
+  ${Object.entries(ALPHA.white || {}).map(([key, value]) => `--alpha-white-${key}: ${value};`).join('\n  ')}
 
   /* ========================================
      SEMANTIC COLORS
