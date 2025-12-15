@@ -19,9 +19,9 @@ export const COLORS = {
     white: '#FEFDFB',
   },
   accent: {
-    DEFAULT: '#2C4435',    // Sage green - primary brand color
-    hover: '#1F3327',      // Darker sage green for hover states
-    light: '#4E6E5A',      // Lighter sage for subtle accents
+    DEFAULT: '#1E3D5C',    // Deep midnight blue - primary brand color
+    hover: '#132B44',      // Darker midnight blue for hover states
+    light: '#3B5A7D',      // Lighter midnight blue for subtle accents
   },
   warm: {
     DEFAULT: '#8B7355',    // Warm brown - DECORATIVE ONLY (borders, backgrounds)
@@ -57,9 +57,9 @@ export const COLORS_OKLCH = {
     white: 'oklch(0.993 0.004 85)',          // #FEFDFB in Oklch
   },
   accent: {
-    DEFAULT: 'oklch(0.312 0.052 160)',       // #2C4435 sage green in Oklch
-    hover: 'oklch(0.245 0.052 160)',         // #1F3327 darker sage in Oklch
-    light: 'oklch(0.482 0.052 160)',         // #4E6E5A lighter sage in Oklch
+    DEFAULT: 'oklch(0.312 0.068 240)',       // #1E3D5C deep midnight blue in Oklch
+    hover: 'oklch(0.245 0.068 240)',         // #132B44 darker midnight blue in Oklch
+    light: 'oklch(0.482 0.068 240)',         // #3B5A7D lighter midnight blue in Oklch
   },
   warm: {
     DEFAULT: 'oklch(0.552 0.040 55)',        // #8B7355 warm brown in Oklch
@@ -285,17 +285,17 @@ export const LAYOUT = {
 // Standardized naming: all use numeric keys for consistency (2025 best practice)
 export const ALPHA = {
   accent: {
-    98: 'rgba(44, 68, 53, 0.98)',    // #2C4435 sage green at 98% opacity
-    95: 'rgba(44, 68, 53, 0.95)',    // #2C4435 sage green at 95% opacity
-    60: 'rgba(44, 68, 53, 0.6)',     // #2C4435 sage green at 60% opacity
-    50: 'rgba(44, 68, 53, 0.5)',     // #2C4435 sage green at 50% opacity
-    35: 'rgba(44, 68, 53, 0.35)',    // #2C4435 sage green at 35% opacity
-    30: 'rgba(44, 68, 53, 0.3)',     // #2C4435 sage green at 30% opacity
-    14: 'rgba(44, 68, 53, 0.14)',    // #2C4435 sage green at 14% opacity
-    10: 'rgba(44, 68, 53, 0.1)',     // #2C4435 sage green at 10% opacity
-    8: 'rgba(44, 68, 53, 0.08)',     // #2C4435 sage green at 8% opacity
-    6: 'rgba(44, 68, 53, 0.06)',     // #2C4435 sage green at 6% opacity
-    5: 'rgba(44, 68, 53, 0.05)',     // #2C4435 sage green at 5% opacity
+    98: 'rgba(30, 61, 92, 0.98)',    // #1E3D5C deep midnight blue at 98% opacity
+    95: 'rgba(30, 61, 92, 0.95)',    // #1E3D5C deep midnight blue at 95% opacity
+    60: 'rgba(30, 61, 92, 0.6)',     // #1E3D5C deep midnight blue at 60% opacity
+    50: 'rgba(30, 61, 92, 0.5)',     // #1E3D5C deep midnight blue at 50% opacity
+    35: 'rgba(30, 61, 92, 0.35)',    // #1E3D5C deep midnight blue at 35% opacity
+    30: 'rgba(30, 61, 92, 0.3)',     // #1E3D5C deep midnight blue at 30% opacity
+    14: 'rgba(30, 61, 92, 0.14)',    // #1E3D5C deep midnight blue at 14% opacity
+    10: 'rgba(30, 61, 92, 0.1)',     // #1E3D5C deep midnight blue at 10% opacity
+    8: 'rgba(30, 61, 92, 0.08)',     // #1E3D5C deep midnight blue at 8% opacity
+    6: 'rgba(30, 61, 92, 0.06)',     // #1E3D5C deep midnight blue at 6% opacity
+    5: 'rgba(30, 61, 92, 0.05)',     // #1E3D5C deep midnight blue at 5% opacity
   },
   warm: {
     30: 'rgba(139, 115, 85, 0.3)',   // #8B7355 at 30% opacity
