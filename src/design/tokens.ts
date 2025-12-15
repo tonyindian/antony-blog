@@ -243,6 +243,42 @@ export const LAYOUT = {
   },
 } as const;
 
+// Alpha (transparency) variants for colors
+export const ALPHA = {
+  accent: {
+    95: 'rgba(43, 74, 98, 0.95)',    // #2B4A62 at 95% opacity
+    98: 'rgba(43, 74, 98, 0.98)',    // #2B4A62 at 98% opacity
+    60: 'rgba(43, 74, 98, 0.6)',     // #2B4A62 at 60% opacity
+    50: 'rgba(43, 74, 98, 0.5)',     // #2B4A62 at 50% opacity
+    35: 'rgba(43, 74, 98, 0.35)',    // #2B4A62 at 35% opacity
+    30: 'rgba(43, 74, 98, 0.3)',     // #2B4A62 at 30% opacity
+    14: 'rgba(43, 74, 98, 0.14)',    // #2B4A62 at 14% opacity
+    10: 'rgba(43, 74, 98, 0.1)',     // #2B4A62 at 10% opacity
+    8: 'rgba(43, 74, 98, 0.08)',     // #2B4A62 at 8% opacity
+    6: 'rgba(43, 74, 98, 0.06)',     // #2B4A62 at 6% opacity
+    5: 'rgba(43, 74, 98, 0.05)',     // #2B4A62 at 5% opacity
+  },
+  warm: {
+    30: 'rgba(139, 115, 85, 0.3)',   // #8B7355 at 30% opacity
+    20: 'rgba(139, 115, 85, 0.2)',   // #8B7355 at 20% opacity
+    8: 'rgba(139, 115, 85, 0.08)',   // #8B7355 at 8% opacity
+    3: 'rgba(139, 115, 85, 0.03)',   // #8B7355 at 3% opacity
+  },
+  paper: {
+    white: 'rgba(254, 253, 251, 1)',      // #FEFDFB at 100%
+    white80: 'rgba(254, 253, 251, 0.8)',  // #FEFDFB at 80% opacity
+    white60: 'rgba(254, 253, 251, 0.6)',  // #FEFDFB at 60% opacity
+    white10: 'rgba(254, 253, 251, 0.1)',  // #FEFDFB at 10% opacity
+    default98: 'rgba(243, 242, 238, 0.98)', // #F3F2EE at 98% opacity
+  },
+  white: {
+    100: 'rgba(255, 255, 255, 1)',    // Pure white at 100%
+    80: 'rgba(255, 255, 255, 0.8)',   // Pure white at 80% opacity
+    60: 'rgba(255, 255, 255, 0.6)',   // Pure white at 60% opacity
+    40: 'rgba(255, 255, 255, 0.4)',   // Pure white at 40% opacity
+  },
+} as const;
+
 export const COMPONENT_STYLES = {
   button: {
     primary: {
@@ -270,8 +306,8 @@ export const COMPONENT_STYLES = {
   },
   input: {
     text: {
-      bg: 'rgba(255, 255, 255, 0.8)',
-      border: `1px solid ${COLORS.warm.DEFAULT}4D`,
+      bg: ALPHA.white[80],
+      border: `1px solid ${ALPHA.warm[20]}`,
       borderFocus: COLORS.accent.DEFAULT,
       text: COLORS.ink.DEFAULT,
       placeholder: `${COLORS.ink.muted}66`,
@@ -283,8 +319,8 @@ export const COMPONENT_STYLES = {
     },
   },
   card: {
-    bg: 'rgba(255, 255, 255, 0.6)',
-    border: `1px solid ${COLORS.warm.DEFAULT}33`,
+    bg: ALPHA.white[60],
+    border: `1px solid ${ALPHA.warm[30]}`,
     borderRadius: BORDER_RADIUS.lg,
     padding: '2rem',
     shadow: SHADOWS.md,
@@ -297,8 +333,8 @@ export const COMPONENT_STYLES = {
   },
   header: {
     bg: COLORS.accent.DEFAULT,
-    bgBlur: `rgba(44, 68, 53, 0.95)`,
-    border: `1px solid ${COLORS.accent.DEFAULT}14`,
+    bgBlur: ALPHA.accent[95],
+    border: `1px solid ${ALPHA.accent[14]}`,
     text: COLORS.paper.white,
     shadow: 'none',
     backdropFilter: 'blur(10px)',
@@ -347,6 +383,35 @@ export function createCSSVariables() {
 
     --color-warm: ${COLORS.warm.DEFAULT};
     --color-hairline: ${COLORS.hairline.DEFAULT};
+
+    /* Alpha (Transparency) Variants */
+    --alpha-accent-95: ${ALPHA.accent[95]};
+    --alpha-accent-98: ${ALPHA.accent[98]};
+    --alpha-accent-60: ${ALPHA.accent[60]};
+    --alpha-accent-50: ${ALPHA.accent[50]};
+    --alpha-accent-35: ${ALPHA.accent[35]};
+    --alpha-accent-30: ${ALPHA.accent[30]};
+    --alpha-accent-14: ${ALPHA.accent[14]};
+    --alpha-accent-10: ${ALPHA.accent[10]};
+    --alpha-accent-08: ${ALPHA.accent[8]};
+    --alpha-accent-06: ${ALPHA.accent[6]};
+    --alpha-accent-05: ${ALPHA.accent[5]};
+
+    --alpha-warm-30: ${ALPHA.warm[30]};
+    --alpha-warm-20: ${ALPHA.warm[20]};
+    --alpha-warm-08: ${ALPHA.warm[8]};
+    --alpha-warm-03: ${ALPHA.warm[3]};
+
+    --alpha-paper-white: ${ALPHA.paper.white};
+    --alpha-paper-white-80: ${ALPHA.paper.white80};
+    --alpha-paper-white-60: ${ALPHA.paper.white60};
+    --alpha-paper-white-10: ${ALPHA.paper.white10};
+    --alpha-paper-default-98: ${ALPHA.paper.default98};
+
+    --alpha-white-100: ${ALPHA.white[100]};
+    --alpha-white-80: ${ALPHA.white[80]};
+    --alpha-white-60: ${ALPHA.white[60]};
+    --alpha-white-40: ${ALPHA.white[40]};
 
     /* Typography */
     --font-sans: ${TYPOGRAPHY.fontFamily.sans.join(', ')};
