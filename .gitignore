@@ -17,3 +17,6 @@ src/assets/js/__tests__/*.js.map
 # Test coverage reports
 coverage/
 .vitest-cache/
+
+# Auto-generated design tokens
+src/css/_tokens.css

@@ -65,69 +65,25 @@
 }
 
 /* ========================================
-   CSS VARIABLES
+   DESIGN TOKENS (AUTO-GENERATED)
    ======================================== */
 
-:root {
-  /* Design Token Colors */
-  --color-ink: #1A1A1A;
-  --color-ink-black: #111111;
-  --color-ink-secondary: #444444;
-  --color-ink-muted: #666666;
+/**
+ * Design tokens are automatically generated from src/design/tokens.ts
+ *
+ * BEST PRACTICE (2025 Standard):
+ * - Single source of truth: src/design/tokens.ts
+ * - Automated CSS generation: npm run build:tokens
+ * - Type safety & autocomplete via TypeScript
+ * - Zero manual duplication
+ *
+ * To update colors or design tokens:
+ * 1. Edit src/design/tokens.ts
+ * 2. Run: npm run build:tokens (or npm run build)
+ * 3. Changes automatically reflect in _tokens.css
+ */
 
-  --color-paper: #F3F2EE;
-  --color-paper-white: #FEFDFB;
-
-  --color-accent: #2B4A62;
-  --color-accent-hover: #1F3749;
-  --color-accent-light: #4E6E88;
-
-  --color-warm: #8B7355;
-  --color-hairline: #CCCCCC;
-
-  /* Semantic Colors */
-  --bg-primary: var(--color-paper);
-  --text-primary: var(--color-ink);
-  --text-secondary: var(--color-ink-secondary);
-  --text-muted: var(--color-ink-muted);
-  --accent-primary: var(--color-accent);
-  --accent-secondary: var(--color-accent-light);
-
-  /* Typography */
-  --font-serif: 'Literata', Charter, Georgia, serif;
-  --font-sans: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
-
-  /* Spacing */
-  --space-xs: 0.5rem;
-  --space-sm: 1rem;
-  --space-md: 2rem;
-  --space-lg: 4rem;
-  --space-xl: 6rem;
-
-  /* Layout */
-  --max-width: 1200px;
-  --container-padding: clamp(20px, 5vw, 80px);
-
-  /* Header */
-  --header-height: 60px;
-  --header-offset: clamp(100px, 14vh, 140px);
-  --header-offset-mobile: 110px;
-
-  /* Breakpoints (Modern CSS Custom Properties) */
-  --breakpoint-small: 390px;
-  --breakpoint-mobile: 640px;
-  --breakpoint-tablet: 768px;
-  --breakpoint-desktop: 1024px;
-  --breakpoint-wide: 1280px;
-
-  /* Touch Targets (Apple HIG) */
-  --touch-target-min: 44px;
-
-  /* Container Query Breakpoints */
-  --container-sm: 280px;
-  --container-md: 400px;
-  --container-lg: 600px;
-}
+@import url('./_tokens.css');
 
 /* ========================================
    RESET & BASE
