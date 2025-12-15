@@ -19,9 +19,9 @@ export const COLORS = {
     white: '#FEFDFB',
   },
   accent: {
-    DEFAULT: '#2C4435',    // Sage green - primary brand color
-    hover: '#223529',      // Darker sage for hover states
-    light: '#507359',      // Lighter sage for subtle accents
+    DEFAULT: '#2B4A62',    // Deep slate blue - primary brand color
+    hover: '#1F3749',      // Darker midnight blue for hover states
+    light: '#4E6E88',      // Lighter slate for subtle accents
   },
   warm: {
     DEFAULT: '#8B7355',    // Warm brown - DECORATIVE ONLY (borders, backgrounds)
