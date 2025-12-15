@@ -1,10 +1,19 @@
 # Design System
 
-**Professional Design Token System following 2025 Best Practices**
+**Professional Design Token System following December 2025 Best Practices**
 
 ## Overview
 
 This design system implements a centralized, type-safe token architecture with automated CSS generation. All design decisions are made in one place, ensuring consistency and preventing drift between code and styles.
+
+### ✨ December 2025 Updates
+
+- ✅ **Standardized CSS Variable Naming** - Consistent kebab-case with dashes
+- ✅ **Expanded Semantic Token Layer** - Component-level tokens for easier theming
+- ✅ **W3C Design Tokens Format** - Compliant with 2025.10 specification
+- ✅ **Oklch Color Space** - Modern, perceptually uniform colors
+- ✅ **Dark Mode Support** - Theme system ready for light/dark modes
+- ✅ **Automated Style Guide** - Living documentation generated from tokens
 
 ## Architecture
 
@@ -164,8 +173,145 @@ This prevents:
 ## Files
 
 - **`tokens.ts`** - Single source of truth (EDIT THIS)
+- **`tokens.w3c.json`** - W3C Design Tokens Format (2025.10 compliant)
 - **`_tokens.css`** - Auto-generated (DO NOT EDIT)
 - **`README.md`** - This file
+
+## New Features (December 2025)
+
+### 1. W3C Design Tokens Format
+
+A W3C-compliant JSON file (`tokens.w3c.json`) is now available for cross-tool compatibility:
+
+```json
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/schemas/design-tokens.schema.json",
+  "$version": "2025.10",
+  "color": {
+    "accent": {
+      "default": {
+        "$value": "#2C4435",
+        "$description": "Primary brand color (sage green)"
+      }
+    }
+  }
+}
+```
+
+**Benefits:**
+- Compatible with Figma, Sketch, Style Dictionary, Tokens Studio
+- Supports theming via `$extends`
+- Industry standard format
+
+### 2. Oklch Color Space
+
+Modern color definitions in perceptually uniform Oklch:
+
+```typescript
+export const COLORS_OKLCH = {
+  accent: {
+    DEFAULT: 'oklch(0.312 0.052 160)',  // Sage green
+    hover: 'oklch(0.245 0.052 160)',    // Darker sage
+    light: 'oklch(0.482 0.052 160)',    // Lighter sage
+  }
+}
+```
+
+**Benefits:**
+- Perceptually uniform colors
+- Better gradients and color mixing
+- Wider color gamut (Display P3)
+- Excellent browser support (Chrome 111+, Firefox 113+, Safari 16.4+)
+
+### 3. Semantic Token Layer
+
+Component-level semantic tokens for easier theming:
+
+```css
+/* Button tokens */
+--button-primary-bg: var(--color-accent);
+--button-primary-bg-hover: var(--color-accent-hover);
+--button-primary-text: var(--color-paper-white);
+
+/* Card tokens */
+--card-bg: var(--alpha-white-60);
+--card-border: var(--alpha-warm-20);
+--card-border-hover: var(--color-accent);
+
+/* Input tokens */
+--input-bg: var(--alpha-white-80);
+--input-border-focus: var(--color-accent);
+--input-shadow-focus: var(--alpha-accent-10);
+```
+
+**Benefits:**
+- Reduces cognitive load
+- Makes theme switching easier
+- Clear component relationships
+
+### 4. Dark Mode Support
+
+Theme configurations in `THEMES` object:
+
+```typescript
+export const THEMES = {
+  light: {
+    text: { primary: COLORS.ink.DEFAULT },
+    bg: { primary: COLORS.paper.DEFAULT },
+    accent: { primary: COLORS.accent.DEFAULT },
+  },
+  dark: {
+    text: { primary: COLORS.paper.white },
+    bg: { primary: COLORS.ink.DEFAULT },
+    accent: { primary: COLORS.accent.light },
+  },
+}
+```
+
+**Usage:**
+```html
+<html data-theme="dark">
+```
+
+Or use system preference:
+```css
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-primary: var(--color-paper-white);
+    --bg-primary: var(--color-ink);
+  }
+}
+```
+
+### 5. Automated Style Guide
+
+Generate living documentation:
+
+```bash
+npm run build:styleguide
+```
+
+Opens `docs/styleguide.html` with:
+- All color swatches
+- Semantic token reference
+- Usage examples
+- Auto-updated from `tokens.ts`
+
+## Build Commands
+
+```bash
+# Generate CSS tokens
+npm run build:tokens
+
+# Generate style guide
+npm run build:styleguide
+
+# Full build (includes both)
+npm run build
+
+# Lint colors (prevent hardcoded values)
+npm run lint:colors
+```
 
 ## Migration Notes
 

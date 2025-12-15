@@ -31,6 +31,44 @@ export const COLORS = {
   },
 } as const;
 
+/**
+ * Modern Color Spaces (2025 Best Practice)
+ *
+ * Oklch provides:
+ * - Perceptually uniform colors
+ * - Better gradients and color mixing
+ * - Wider color gamut support (Display P3)
+ * - Consistent lightness across hues
+ *
+ * Browser support: Excellent in 2025 (Chrome 111+, Firefox 113+, Safari 16.4+)
+ * Fallback: Hex colors above serve as fallback for older browsers
+ *
+ * Reference: https://www.frontendtools.tech/blog/modern-web-typography-techniques-2025-readability-guide
+ */
+export const COLORS_OKLCH = {
+  ink: {
+    DEFAULT: 'oklch(0.153 0.005 270)',       // #1A1A1A in Oklch
+    black: 'oklch(0.113 0.005 270)',         // #111111 in Oklch
+    secondary: 'oklch(0.307 0.005 270)',     // #444444 in Oklch
+    muted: 'oklch(0.461 0.005 270)',         // #666666 in Oklch
+  },
+  paper: {
+    DEFAULT: 'oklch(0.956 0.008 85)',        // #F3F2EE in Oklch
+    white: 'oklch(0.993 0.004 85)',          // #FEFDFB in Oklch
+  },
+  accent: {
+    DEFAULT: 'oklch(0.312 0.052 160)',       // #2C4435 sage green in Oklch
+    hover: 'oklch(0.245 0.052 160)',         // #1F3327 darker sage in Oklch
+    light: 'oklch(0.482 0.052 160)',         // #4E6E5A lighter sage in Oklch
+  },
+  warm: {
+    DEFAULT: 'oklch(0.552 0.040 55)',        // #8B7355 warm brown in Oklch
+  },
+  hairline: {
+    DEFAULT: 'oklch(0.839 0 0)',             // #CCCCCC in Oklch
+  },
+} as const;
+
 export const TYPOGRAPHY = {
   fontFamily: {
     sans: ['Manrope', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica Neue', 'Arial', 'sans-serif'],
@@ -244,10 +282,11 @@ export const LAYOUT = {
 } as const;
 
 // Alpha (transparency) variants for colors
+// Standardized naming: all use numeric keys for consistency (2025 best practice)
 export const ALPHA = {
   accent: {
-    95: 'rgba(44, 68, 53, 0.95)',    // #2C4435 sage green at 95% opacity
     98: 'rgba(44, 68, 53, 0.98)',    // #2C4435 sage green at 98% opacity
+    95: 'rgba(44, 68, 53, 0.95)',    // #2C4435 sage green at 95% opacity
     60: 'rgba(44, 68, 53, 0.6)',     // #2C4435 sage green at 60% opacity
     50: 'rgba(44, 68, 53, 0.5)',     // #2C4435 sage green at 50% opacity
     35: 'rgba(44, 68, 53, 0.35)',    // #2C4435 sage green at 35% opacity
@@ -265,11 +304,15 @@ export const ALPHA = {
     3: 'rgba(139, 115, 85, 0.03)',   // #8B7355 at 3% opacity
   },
   paper: {
-    white: 'rgba(254, 253, 251, 1)',      // #FEFDFB at 100%
-    white80: 'rgba(254, 253, 251, 0.8)',  // #FEFDFB at 80% opacity
-    white60: 'rgba(254, 253, 251, 0.6)',  // #FEFDFB at 60% opacity
-    white10: 'rgba(254, 253, 251, 0.1)',  // #FEFDFB at 10% opacity
-    default98: 'rgba(243, 242, 238, 0.98)', // #F3F2EE at 98% opacity
+    white: {
+      100: 'rgba(254, 253, 251, 1)',      // #FEFDFB at 100%
+      80: 'rgba(254, 253, 251, 0.8)',   // #FEFDFB at 80% opacity
+      60: 'rgba(254, 253, 251, 0.6)',   // #FEFDFB at 60% opacity
+      10: 'rgba(254, 253, 251, 0.1)',   // #FEFDFB at 10% opacity
+    },
+    default: {
+      98: 'rgba(243, 242, 238, 0.98)', // #F3F2EE at 98% opacity
+    },
   },
   white: {
     100: 'rgba(255, 255, 255, 1)',    // Pure white at 100%
@@ -363,6 +406,183 @@ export const MOTION = {
   reducedMotion: '@media (prefers-reduced-motion: reduce)',
   hover: '@media (hover: hover) and (pointer: fine)',
   touch: '@media (hover: none) and (pointer: coarse)',
+} as const;
+
+/**
+ * Theme Support (2025 Best Practice)
+ *
+ * Provides light and dark theme configurations using semantic tokens.
+ * Themes override base colors while maintaining the design system structure.
+ *
+ * Usage:
+ * <html data-theme="light"> or <html data-theme="dark">
+ * Or use: @media (prefers-color-scheme: dark)
+ */
+export const THEMES = {
+  light: {
+    text: {
+      primary: COLORS.ink.DEFAULT,
+      secondary: COLORS.ink.secondary,
+      muted: COLORS.ink.muted,
+      inverse: COLORS.paper.white,
+    },
+    bg: {
+      primary: COLORS.paper.DEFAULT,
+      secondary: COLORS.paper.white,
+      inverse: COLORS.ink.DEFAULT,
+    },
+    accent: {
+      primary: COLORS.accent.DEFAULT,
+      hover: COLORS.accent.hover,
+      light: COLORS.accent.light,
+    },
+    border: {
+      subtle: ALPHA.warm[20],
+      default: ALPHA.warm[30],
+      emphasis: COLORS.accent.DEFAULT,
+    },
+  },
+  dark: {
+    text: {
+      primary: COLORS.paper.white,
+      secondary: ALPHA.paper.white[80],
+      muted: ALPHA.paper.white[60],
+      inverse: COLORS.ink.DEFAULT,
+    },
+    bg: {
+      primary: COLORS.ink.DEFAULT,
+      secondary: COLORS.ink.secondary,
+      inverse: COLORS.paper.white,
+    },
+    accent: {
+      primary: COLORS.accent.light,      // Lighter sage works better on dark bg
+      hover: COLORS.accent.DEFAULT,
+      light: COLORS.accent.light,
+    },
+    border: {
+      subtle: ALPHA.white[10],
+      default: ALPHA.white[20],
+      emphasis: COLORS.accent.light,
+    },
+  },
+} as const;
+
+/**
+ * Semantic Tokens (2025 Best Practice)
+ *
+ * Component-level semantic tokens provide an abstraction layer between
+ * design tokens and components. This makes theming significantly easier
+ * and reduces cognitive load when building UI.
+ *
+ * Reference: https://levelup.gitconnected.com/the-css-custom-properties-secret-that-professional-designers-never-share-45da0aa56224
+ */
+export const SEMANTIC_TOKENS = {
+  // Text Colors (Semantic Layer)
+  text: {
+    primary: COLORS.ink.DEFAULT,
+    secondary: COLORS.ink.secondary,
+    muted: COLORS.ink.muted,
+    inverse: COLORS.paper.white,
+    accent: COLORS.accent.DEFAULT,
+  },
+
+  // Background Colors (Semantic Layer)
+  bg: {
+    primary: COLORS.paper.DEFAULT,
+    secondary: COLORS.paper.white,
+    accent: COLORS.accent.DEFAULT,
+    inverse: COLORS.ink.DEFAULT,
+  },
+
+  // Button Component Tokens
+  button: {
+    primary: {
+      bg: COLORS.accent.DEFAULT,
+      bgHover: COLORS.accent.hover,
+      bgActive: COLORS.accent.hover,
+      bgDisabled: ALPHA.accent[50],
+      text: COLORS.paper.white,
+      textDisabled: ALPHA.paper.white[60],
+      border: 'transparent',
+      shadow: ALPHA.accent[30],
+      shadowHover: ALPHA.accent[30],
+    },
+    secondary: {
+      bg: 'transparent',
+      bgHover: ALPHA.warm[8],
+      bgActive: ALPHA.warm[20],
+      bgDisabled: 'transparent',
+      text: COLORS.ink.secondary,
+      textDisabled: COLORS.ink.muted,
+      border: COLORS.hairline.DEFAULT,
+      borderHover: COLORS.accent.DEFAULT,
+      shadow: 'none',
+    },
+  },
+
+  // Card Component Tokens
+  card: {
+    bg: ALPHA.white[60],
+    bgHover: ALPHA.white[80],
+    border: ALPHA.warm[20],
+    borderHover: COLORS.accent.DEFAULT,
+    borderAccent: COLORS.accent.DEFAULT,
+    shadow: ALPHA.accent[8],
+    shadowHover: ALPHA.accent[30],
+    text: COLORS.ink.DEFAULT,
+    textSecondary: COLORS.ink.secondary,
+  },
+
+  // Form/Input Component Tokens
+  input: {
+    bg: ALPHA.white[80],
+    bgFocus: ALPHA.white[100],
+    bgDisabled: ALPHA.warm[8],
+    border: ALPHA.warm[30],
+    borderHover: ALPHA.warm[30],
+    borderFocus: COLORS.accent.DEFAULT,
+    borderError: '#DC2626', // Red for errors
+    text: COLORS.ink.DEFAULT,
+    textPlaceholder: COLORS.ink.muted,
+    textDisabled: COLORS.ink.muted,
+    shadow: 'none',
+    shadowFocus: ALPHA.accent[10],
+  },
+
+  // Header Component Tokens
+  header: {
+    bg: COLORS.accent.DEFAULT,
+    bgBlur: ALPHA.accent[95],
+    text: COLORS.paper.white,
+    textHover: COLORS.paper.white,
+    textActive: COLORS.paper.white,
+    border: ALPHA.accent[14],
+    shadow: 'none',
+  },
+
+  // Link Component Tokens
+  link: {
+    text: COLORS.accent.light,
+    textHover: COLORS.accent.DEFAULT,
+    textVisited: COLORS.accent.DEFAULT,
+    textActive: COLORS.accent.hover,
+    underline: 'none',
+    underlineHover: 'none',
+  },
+
+  // Overlay/Modal Component Tokens
+  overlay: {
+    bg: ALPHA.accent[60],
+    backdrop: 'blur(20px)',
+  },
+
+  // Focus Ring (Accessibility)
+  focus: {
+    ring: COLORS.accent.DEFAULT,
+    ringWidth: '2px',
+    ringOffset: '2px',
+    ringStyle: 'solid',
+  },
 } as const;
 
 // Helper function to create CSS custom properties

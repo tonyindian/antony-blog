@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run build:ts && npm run build:tokens && npx @11ty/eleventy --serve",
-    "build": "npm run build:ts && npm run build:tokens && npm run build:11ty && npm run build:minify",
+    "build": "npm run build:ts && npm run build:tokens && npm run build:styleguide && npm run build:11ty && npm run build:minify",
     "build:ts": "tsc",
     "build:tokens": "node scripts/generate-tokens.js",
+    "build:styleguide": "node scripts/generate-styleguide.js",
     "build:11ty": "npx @11ty/eleventy",
     "build:minify": "node scripts/minify-css.js",
     "build:prod": "ELEVENTY_ENV=production npm run build",

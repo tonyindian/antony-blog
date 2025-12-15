@@ -64,14 +64,43 @@ function parseTokens(content) {
   if (alphaMatch) {
     const alphaBlock = alphaMatch[1];
 
-    // Parse each alpha category
-    const alphaCategories = ['accent', 'warm', 'paper', 'white'];
-    alphaCategories.forEach(category => {
-      const regex = new RegExp(`${category}:\\s*\\{([^}]+)\\}`, 's');
+    // Parse paper with nested structure (special case)
+    const paperRegex = /paper:\s*\{([\s\S]*?)\n  \},/;
+    const paperMatch = alphaBlock.match(paperRegex);
+    if (paperMatch) {
+      tokens.ALPHA.paper = {};
+      // Match each subcategory (white, default, etc.)
+      const subCatRegex = /(\w+):\s*\{([\s\S]*?)\n    \},?/g;
+      let subMatch;
+      while ((subMatch = subCatRegex.exec(paperMatch[1])) !== null) {
+        const subKey = subMatch[1];
+        const subContent = subMatch[2];
+        tokens.ALPHA.paper[subKey] = {};
+        const props = subContent.matchAll(/(\d+):\s*['"]([^'"]+)['"]/g);
+        for (const [, key, value] of props) {
+          tokens.ALPHA.paper[subKey][key] = value;
+        }
+      }
+    }
+
+    // Parse flat structures (accent, warm, white)
+    // Use more specific regex to avoid matching nested categories
+    const accentRegex = /accent:\s*\{([\s\S]*?)\n  \},/;
+    const warmRegex = /warm:\s*\{([\s\S]*?)\n  \},/;
+    // Match white at root level (after paper, before closing)
+    const whiteRegex = /,\n  white:\s*\{([\s\S]*?)\n  \},/;
+
+    const patterns = {
+      accent: accentRegex,
+      warm: warmRegex,
+      white: whiteRegex
+    };
+
+    Object.entries(patterns).forEach(([category, regex]) => {
       const match = alphaBlock.match(regex);
       if (match) {
         tokens.ALPHA[category] = {};
-        const props = match[1].matchAll(/(\w+|\d+):\s*['"]([^'"]+)['"]/g);
+        const props = match[1].matchAll(/(\d+):\s*['"]([^'"]+)['"]/g);
         for (const [, key, value] of props) {
           tokens.ALPHA[category][key] = value;
         }
@@ -106,6 +135,9 @@ function parseTokens(content) {
       tokens.LAYOUT.container.padding = paddingMatch[1];
     }
   }
+
+  // Note: SEMANTIC_TOKENS are manually defined in the CSS generation
+  // to avoid complex parsing of token references
 
   return tokens;
 }
@@ -168,19 +200,118 @@ function generateCSSVariables() {
   ${Object.entries(ALPHA.warm || {}).map(([key, value]) => `--alpha-warm-${key}: ${value};`).join('\n  ')}
 
   /* Paper Alpha Variants */
-  ${Object.entries(ALPHA.paper || {}).map(([key, value]) => `--alpha-paper-${key}: ${value};`).join('\n  ')}
+  ${(() => {
+    const vars = [];
+    if (ALPHA.paper) {
+      Object.entries(ALPHA.paper).forEach(([subKey, subObj]) => {
+        if (typeof subObj === 'object') {
+          Object.entries(subObj).forEach(([key, value]) => {
+            vars.push(`--alpha-paper-${subKey}-${key}: ${value};`);
+          });
+        } else {
+          vars.push(`--alpha-paper-${subKey}: ${subObj};`);
+        }
+      });
+    }
+    return vars.join('\n  ');
+  })()}
 
   /* White Alpha Variants */
   ${Object.entries(ALPHA.white || {}).map(([key, value]) => `--alpha-white-${key}: ${value};`).join('\n  ')}
 
   /* ========================================
-     SEMANTIC COLORS
+     SEMANTIC TOKENS (2025 Best Practice)
+     Component-level tokens for easier theming
      ======================================== */
 
-  --bg-primary: var(--color-paper);
+  /* Text Semantic Tokens */
   --text-primary: var(--color-ink);
   --text-secondary: var(--color-ink-secondary);
   --text-muted: var(--color-ink-muted);
+  --text-inverse: var(--color-paper-white);
+  --text-accent: var(--color-accent);
+
+  /* Background Semantic Tokens */
+  --bg-primary: var(--color-paper);
+  --bg-secondary: var(--color-paper-white);
+  --bg-accent: var(--color-accent);
+  --bg-inverse: var(--color-ink);
+
+  /* Button Primary Tokens */
+  --button-primary-bg: var(--color-accent);
+  --button-primary-bg-hover: var(--color-accent-hover);
+  --button-primary-bg-active: var(--color-accent-hover);
+  --button-primary-bg-disabled: var(--alpha-accent-50);
+  --button-primary-text: var(--color-paper-white);
+  --button-primary-text-disabled: var(--alpha-paper-white-60);
+  --button-primary-border: transparent;
+  --button-primary-shadow: var(--alpha-accent-30);
+  --button-primary-shadow-hover: var(--alpha-accent-30);
+
+  /* Button Secondary Tokens */
+  --button-secondary-bg: transparent;
+  --button-secondary-bg-hover: var(--alpha-warm-8);
+  --button-secondary-bg-active: var(--alpha-warm-20);
+  --button-secondary-bg-disabled: transparent;
+  --button-secondary-text: var(--color-ink-secondary);
+  --button-secondary-text-disabled: var(--color-ink-muted);
+  --button-secondary-border: var(--color-hairline);
+  --button-secondary-border-hover: var(--color-accent);
+  --button-secondary-shadow: none;
+
+  /* Card Tokens */
+  --card-bg: var(--alpha-white-60);
+  --card-bg-hover: var(--alpha-white-80);
+  --card-border: var(--alpha-warm-20);
+  --card-border-hover: var(--color-accent);
+  --card-border-accent: var(--color-accent);
+  --card-shadow: var(--alpha-accent-8);
+  --card-shadow-hover: var(--alpha-accent-30);
+  --card-text: var(--color-ink);
+  --card-text-secondary: var(--color-ink-secondary);
+
+  /* Input Tokens */
+  --input-bg: var(--alpha-white-80);
+  --input-bg-focus: var(--alpha-white-100);
+  --input-bg-disabled: var(--alpha-warm-8);
+  --input-border: var(--alpha-warm-30);
+  --input-border-hover: var(--alpha-warm-30);
+  --input-border-focus: var(--color-accent);
+  --input-border-error: #DC2626;
+  --input-text: var(--color-ink);
+  --input-text-placeholder: var(--color-ink-muted);
+  --input-text-disabled: var(--color-ink-muted);
+  --input-shadow: none;
+  --input-shadow-focus: var(--alpha-accent-10);
+
+  /* Header Tokens */
+  --header-bg: var(--color-accent);
+  --header-bg-blur: var(--alpha-accent-95);
+  --header-text: var(--color-paper-white);
+  --header-text-hover: var(--color-paper-white);
+  --header-text-active: var(--color-paper-white);
+  --header-border: var(--alpha-accent-14);
+  --header-shadow: none;
+
+  /* Link Tokens */
+  --link-text: var(--color-accent-light);
+  --link-text-hover: var(--color-accent);
+  --link-text-visited: var(--color-accent);
+  --link-text-active: var(--color-accent-hover);
+  --link-underline: none;
+  --link-underline-hover: none;
+
+  /* Overlay/Modal Tokens */
+  --overlay-bg: var(--alpha-accent-60);
+  --overlay-backdrop: blur(20px);
+
+  /* Focus Ring Tokens (Accessibility) */
+  --focus-ring: var(--color-accent);
+  --focus-ring-width: 2px;
+  --focus-ring-offset: 2px;
+  --focus-ring-style: solid;
+
+  /* Legacy Aliases (for backward compatibility) */
   --accent-primary: var(--color-accent);
   --accent-secondary: var(--color-accent-light);
 

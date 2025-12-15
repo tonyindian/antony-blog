@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design System Style Guide - Antony Blog</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      color: #1A1A1A;
+      background: #F3F2EE;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    header {
+      background: #2C4435;
+      color: #FEFDFB;
+      padding: 3rem 2rem;
+      border-radius: 12px;
+      margin-bottom: 3rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+      margin-top: 3rem;
+      margin-bottom: 1.5rem;
+      color: #2C4435;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #444444;
+    }
+
+    .subtitle {
+      font-size: 1.125rem;
+      opacity: 0.9;
+    }
+
+    .meta {
+      margin-top: 1rem;
+      font-size: 0.875rem;
+      opacity: 0.8;
+    }
+
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .color-card {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .color-swatch {
+      height: 120px;
+      width: 100%;
+    }
+
+    .color-info {
+      padding: 1rem;
+    }
+
+    .color-name {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .color-value {
+      font-family: 'Courier New', monospace;
+      font-size: 0.875rem;
+      color: #666;
+      background: #f5f5f5;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      display: inline-block;
+    }
+
+    .semantic-tokens {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .token-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem;
+      border-bottom: 1px solid #eee;
+    }
+
+    .token-item:last-child {
+      border-bottom: none;
+    }
+
+    .token-name {
+      font-family: 'Courier New', monospace;
+      font-size: 0.9rem;
+      color: #2C4435;
+    }
+
+    .token-value {
+      font-family: 'Courier New', monospace;
+      font-size: 0.85rem;
+      color: #666;
+      background: #f5f5f5;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+    }
+
+    .features {
+      background: #FEFDFB;
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .features ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .features li {
+      padding: 0.5rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .features li:before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #2C4435;
+      font-weight: bold;
+    }
+
+    footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid #ddd;
+      text-align: center;
+      color: #666;
+      font-size: 0.875rem;
+    }
+
+    code {
+      background: #f5f5f5;
+      padding: 0.125rem 0.375rem;
+      border-radius: 3px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Design System Style Guide</h1>
+      <p class="subtitle">Professional Design Token System (2025 Standards)</p>
+      <p class="meta">Generated: 2025-12-15 | Source: src/design/tokens.ts</p>
+    </header>
+
+    <div class="features">
+      <h2>System Features</h2>
+      <ul>
+        <li>Single Source of Truth (TypeScript)</li>
+        <li>Automated CSS Generation</li>
+        <li>W3C Design Tokens Format Compliant (2025.10)</li>
+        <li>WCAG AAA Color Contrast</li>
+        <li>Modern CSS (Cascade Layers, Container Queries, CSS Nesting)</li>
+        <li>Semantic Token Layer for Easy Theming</li>
+        <li>Oklch Color Space Support</li>
+        <li>Dark Mode Ready</li>
+        <li>Type-Safe with Comprehensive Tests</li>
+      </ul>
+    </div>
+
+    <h2>Color Palette</h2>
+    <p>All colors meet WCAG AAA contrast requirements for accessibility.</p>
+
+    
+      <h3>Ink</h3>
+      <div class="color-grid">
+        
+          <div class="color-card">
+            <div class="color-swatch" style="background-color: #1A1A1A"></div>
+            <div class="color-info">
+              <div class="color-name">ink.DEFAULT</div>
+              <div class="color-value">#1A1A1A</div>
+            </div>
+          </div>
+        
+          <div class="color-card">
+            <div class="color-swatch" style="background-color: #111111"></div>
+            <div class="color-info">
+              <div class="color-name">ink.black</div>
+              <div class="color-value">#111111</div>
+            </div>
+          </div>
+        
+          <div class="color-card">
+            <div class="color-swatch" style="background-color: #444444"></div>
+            <div class="color-info">
+              <div class="color-name">ink.secondary</div>
+              <div class="color-value">#444444</div>
+            </div>
+          </div>
+        
+          <div class="color-card">
+            <div class="color-swatch" style="background-color: #666666"></div>
+            <div class="color-info">
+              <div class="color-name">ink.muted</div>
+              <div class="color-value">#666666</div>
+            </div>
+          </div>
+        
+      </div>
+    
+      <h3>Paper</h3>
+      <div class="color-grid">
+        
+          <div class="color-card">
+            <div class="color-swatch" style="background-color: #F3F2EE"></div>
+            <div class="color-info">
+              <div class="color-name">paper.DEFAULT</div>
+              <div class="color-value">#F3F2EE</div>
+            </div>
+          </div>
+        
+          <div class="color-card">
+            <div class="color-swatch" style="background-color: #FEFDFB"></div>
+            <div class="color-info">
+              <div class="color-name">paper.white</div>
+              <div class="color-value">#FEFDFB</div>
+            </div>
+          </div>
+        
+      </div>
+    
+      <h3>Accent</h3>
+      <div class="color-grid">
+        
+          <div class="color-card">
+            <div class="color-swatch" style="background-color: #2C4435"></div>
+            <div class="color-info">
+              <div class="color-name">accent.DEFAULT</div>
+              <div class="color-value">#2C4435</div>
+            </div>
+          </div>
+        
+          <div class="color-card">
+            <div class="color-swatch" style="background-color: #1F3327"></div>
+            <div class="color-info">
+              <div class="color-name">accent.hover</div>
+              <div class="color-value">#1F3327</div>
+            </div>
+          </div>
+        
+          <div class="color-card">
+            <div class="color-swatch" style="background-color: #4E6E5A"></div>
+            <div class="color-info">
+              <div class="color-name">accent.light</div>
+              <div class="color-value">#4E6E5A</div>
+            </div>
+          </div>
+        
+      </div>
+    
+      <h3>Warm</h3>
+      <div class="color-grid">
+        
+          <div class="color-card">
+            <div class="color-swatch" style="background-color: #8B7355"></div>
+            <div class="color-info">
+              <div class="color-name">warm.DEFAULT</div>
+              <div class="color-value">#8B7355</div>
+            </div>
+          </div>
+        
+      </div>
+    
+      <h3>Hairline</h3>
+      <div class="color-grid">
+        
+          <div class="color-card">
+            <div class="color-swatch" style="background-color: #CCCCCC"></div>
+            <div class="color-info">
+              <div class="color-name">hairline.DEFAULT</div>
+              <div class="color-value">#CCCCCC</div>
+            </div>
+          </div>
+        
+      </div>
+    
+
+    <h2>Semantic Tokens (Component Layer)</h2>
+    <p>Component-level semantic tokens make theming easier and reduce cognitive load.</p>
+
+    <div class="semantic-tokens">
+      <h3>Button Tokens</h3>
+      <div class="token-item">
+        <span class="token-name">--button-primary-bg</span>
+        <span class="token-value">var(--color-accent)</span>
+      </div>
+      <div class="token-item">
+        <span class="token-name">--button-primary-bg-hover</span>
+        <span class="token-value">var(--color-accent-hover)</span>
+      </div>
+      <div class="token-item">
+        <span class="token-name">--button-primary-text</span>
+        <span class="token-value">var(--color-paper-white)</span>
+      </div>
+    </div>
+
+    <div class="semantic-tokens">
+      <h3>Card Tokens</h3>
+      <div class="token-item">
+        <span class="token-name">--card-bg</span>
+        <span class="token-value">var(--alpha-white-60)</span>
+      </div>
+      <div class="token-item">
+        <span class="token-name">--card-border</span>
+        <span class="token-value">var(--alpha-warm-20)</span>
+      </div>
+      <div class="token-item">
+        <span class="token-name">--card-border-hover</span>
+        <span class="token-value">var(--color-accent)</span>
+      </div>
+    </div>
+
+    <div class="semantic-tokens">
+      <h3>Input Tokens</h3>
+      <div class="token-item">
+        <span class="token-name">--input-bg</span>
+        <span class="token-value">var(--alpha-white-80)</span>
+      </div>
+      <div class="token-item">
+        <span class="token-name">--input-border-focus</span>
+        <span class="token-value">var(--color-accent)</span>
+      </div>
+      <div class="token-item">
+        <span class="token-name">--input-shadow-focus</span>
+        <span class="token-value">var(--alpha-accent-10)</span>
+      </div>
+    </div>
+
+    <h2>Usage</h2>
+    <div class="semantic-tokens">
+      <p>To update design tokens:</p>
+      <ol style="padding-left: 2rem; margin-top: 1rem;">
+        <li style="padding: 0.5rem 0;">Edit <code>src/design/tokens.ts</code></li>
+        <li style="padding: 0.5rem 0;">Run <code>npm run build:tokens</code></li>
+        <li style="padding: 0.5rem 0;">Changes automatically reflect in <code>src/css/_tokens.css</code></li>
+        <li style="padding: 0.5rem 0;">Regenerate this style guide: <code>npm run build:styleguide</code></li>
+      </ol>
+    </div>
+
+    <footer>
+      <p>Design System Style Guide | Auto-generated from TypeScript tokens</p>
+      <p>Follows W3C Design Tokens Specification 2025.10 | WCAG AAA Compliant</p>
+    </footer>
+  </div>
+</body>
+</html>

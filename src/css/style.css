@@ -205,7 +205,7 @@ a:focus {
 .site-header nav a {
   font-size: 1rem;
   font-weight: 500;
-  color: var(--alpha-paper-white80);
+  color: var(--alpha-paper-white-80);
   text-transform: lowercase;
   letter-spacing: 0.02em;
 
@@ -215,7 +215,7 @@ a:focus {
   }
 
   &:focus-visible {
-    outline: 2px solid var(--alpha-paper-white80);
+    outline: 2px solid var(--alpha-paper-white-80);
     outline-offset: 4px;
     border-radius: 2px;
   }
@@ -242,7 +242,7 @@ a:focus {
   -webkit-tap-highlight-color: transparent;
 
   &:focus-visible {
-    outline: 2px solid var(--alpha-paper-white80);
+    outline: 2px solid var(--alpha-paper-white-80);
     outline-offset: 4px;
     border-radius: 8px;
   }
@@ -337,12 +337,12 @@ a:focus {
 
     &:hover,
     &:focus-visible {
-      background: var(--alpha-paper-white10);
+      background: var(--alpha-paper-white-10);
       transform: scale(1.05);
     }
 
     &:focus-visible {
-      outline: 2px solid var(--alpha-paper-white60);
+      outline: 2px solid var(--alpha-paper-white-60);
       outline-offset: 4px;
     }
   }
@@ -668,7 +668,7 @@ section {
 }
 
 .demo-video-inner {
-  background: var(--alpha-paper-default98);
+  background: var(--alpha-paper-default-98);
   border-radius: 12px;
   padding: var(--space-md);
   max-width: 960px;
