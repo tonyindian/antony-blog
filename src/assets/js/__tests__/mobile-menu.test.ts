@@ -527,8 +527,8 @@ function createMobileMenu() {
     isOpen = !isOpen;
 
     // Update ARIA attributes
-    menuToggle.setAttribute('aria-expanded', String(isOpen));
-    menuToggle.setAttribute('aria-label', isOpen ? 'Menü schließen' : 'Menü öffnen');
+    menuToggle!.setAttribute('aria-expanded', String(isOpen));
+    menuToggle!.setAttribute('aria-label', isOpen ? 'Menü schließen' : 'Menü öffnen');
 
     if (isOpen) {
       // Store currently focused element
@@ -568,13 +568,13 @@ function createMobileMenu() {
 
       if (e.shiftKey && document.activeElement === firstLink) {
         e.preventDefault();
-        menuToggle.focus();
+        menuToggle!.focus();
       } else if (!e.shiftKey && document.activeElement === menuToggle) {
         e.preventDefault();
         firstLink.focus();
       } else if (!e.shiftKey && document.activeElement === lastLink) {
         e.preventDefault();
-        menuToggle.focus();
+        menuToggle!.focus();
       }
     }
   }
@@ -583,7 +583,7 @@ function createMobileMenu() {
     if (!isOpen) return;
 
     const target = e.target as Node;
-    if (!nav.contains(target) && !menuToggle.contains(target)) {
+    if (!nav!.contains(target) && !menuToggle!.contains(target)) {
       closeMenu();
     }
   }

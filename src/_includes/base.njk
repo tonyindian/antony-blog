@@ -40,6 +40,10 @@
     "description": "Professional voice actor and speaker with warm baritone for commercials, documentaries, and brand stories. German, Swiss German, English.",
     "url": "{{ site.url }}",
     "email": "mail@antony.ch",
+    "sameAs": [
+      "{{ site.social.instagram }}",
+      "{{ site.social.tiktok }}"
+    ],
     "knowsLanguage": ["de", "de-CH", "en"],
     "areaServed": [
       {
@@ -136,11 +140,27 @@
   {% endif %}
   
   <footer>
-    <p>
-      © 2025 antony alex ·
-      <a href="/impressum/">Impressum</a> ·
-      <a href="/datenschutz/">Datenschutz</a>
-    </p>
+    <div class="footer-inner">
+      <p>
+        © 2025 antony alex ·
+        <a href="/impressum/">Impressum</a> ·
+        <a href="/datenschutz/">Datenschutz</a>
+      </p>
+      <div class="social-links">
+        <a href="{{ site.social.instagram }}" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profil">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+          </svg>
+        </a>
+        <a href="{{ site.social.tiktok }}" target="_blank" rel="noopener noreferrer" aria-label="TikTok Profil">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>
+          </svg>
+        </a>
+      </div>
+    </div>
   </footer>
 
   <script src="/assets/js/sw-register.js" defer></script>

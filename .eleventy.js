@@ -100,7 +100,11 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addGlobalData("site", {
     url: "https://www.antony.ch",
     title: "Antony Alex",
-    description: "Renaissance-Typ mit vielen Instrumenten"
+    description: "Renaissance-Typ mit vielen Instrumenten",
+    social: {
+      instagram: "https://www.instagram.com/antonyalex.voice",
+      tiktok: "https://www.tiktok.com/@tony.indian"
+    }
   });
   
   // Posts Collection
